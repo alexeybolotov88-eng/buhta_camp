@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Смены — Бухта</title>
+  <meta name="description" content="Смены лагеря Бухта: Снежный фарватер, English Current, Карта берега, Глубокая вода, Сцена у воды. Даты, программа, цены." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=5" />
+</head>
+<body>
+  <header class="site-header" id="header">
+    <div class="header-inner">
+      <a class="logo" href="index.html"><span class="logo-mark" aria-hidden="true"></span>Бухта</a>
+      <button class="nav-toggle" type="button" aria-label="Меню" aria-expanded="false" data-nav-toggle>
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" data-nav>
+        <a href="index.html">Главная</a>
+        <a href="o-lagere.html">О лагере</a>
+        <a href="smeny.html" class="is-active">Смены</a>
+        <a href="otzyvy.html">Отзывы</a>
+        <a href="kontakty.html">Контакты</a>
+        <a class="header-cta" href="#book" data-open-modal>Забронировать</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow">Смены 2026</p>
+        <h1>Пять заездов. У каждого свой характер.</h1>
+        <p class="lead">Выберите сезон и сюжет. Все смены держат три опоры: плавание, English, командная история. Мест мало: бронируем по предоплате.</p>
+      </div>
+    </section>
+
+    <section class="section section-flush">
+      <div class="container">
+        <div class="tabs" role="tablist" aria-label="Смены">
+          <button type="button" class="tab is-active" role="tab" aria-selected="true" data-tab="snezhny">Снежный фарватер</button>
+          <button type="button" class="tab" role="tab" aria-selected="false" data-tab="english">English Current</button>
+          <button type="button" class="tab" role="tab" aria-selected="false" data-tab="karta" id="karta">Карта берега</button>
+          <button type="button" class="tab" role="tab" aria-selected="false" data-tab="glubokaya">Глубокая вода</button>
+          <button type="button" class="tab" role="tab" aria-selected="false" data-tab="scena">Сцена у воды</button>
+        </div>
+
+        <div class="tab-panel is-active" id="panel-snezhny" role="tabpanel" data-panel="snezhny">
+          <div class="shift-detail">
+            <div class="shift-detail-media">
+              <img src="images/pool.jpg" alt="Зимний бассейн" />
+            </div>
+            <div class="shift-detail-body">
+              <span class="shift-tag">2–9 января · 8 дней</span>
+              <h2>Снежный фарватер</h2>
+              <p class="text-muted">Новогодняя смена для тех, кому мало только ёлки. Утром — бассейн и техника плавания, днём — English-игры и квест «фарватер», вечером — огоньки без гаджетов.</p>
+              <ul class="program-list">
+                <li>Ежедневные тренировки в тёплом бассейне</li>
+                <li>Новогодний сюжет и командный квест</li>
+                <li>Мастерские: открытки, свет, сцена</li>
+                <li>Возраст 7–15, группы по уровню плавания</li>
+              </ul>
+              <div class="price-row">
+                <span class="price">54 000 ₽</span>
+                <span class="seats-pill">Осталось 4 места</span>
+                <button type="button" class="btn btn-primary" data-open-modal data-shift="Снежный фарватер">Забронировать</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="panel-english" role="tabpanel" data-panel="english">
+          <div class="shift-detail">
+            <div class="shift-detail-media">
+              <img src="images/child.jpg" alt="Весенняя смена" />
+            </div>
+            <div class="shift-detail-body">
+              <span class="shift-tag">20–28 марта · 9 дней</span>
+              <h2>English Current</h2>
+              <p class="text-muted">Весенний заезд с упором на разговорный English. Язык встроен в плавание, квесты и быт: ребёнок слышит и говорит весь день, без зубрёжки списков слов.</p>
+              <ul class="program-list">
+                <li>English-погружение 3–4 часа в день в игре</li>
+                <li>Плавание и подвижные станции</li>
+                <li>Финальный English-квест для родителей на выезде</li>
+                <li>Идеально после каникул перед четвертью</li>
+              </ul>
+              <div class="price-row">
+                <span class="price">62 000 ₽</span>
+                <span class="seats-pill ok">Осталось 9 мест</span>
+                <button type="button" class="btn btn-primary" data-open-modal data-shift="English Current">Забронировать</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="panel-karta" role="tabpanel" data-panel="karta">
+          <div class="shift-detail">
+            <div class="shift-detail-media">
+              <img src="images/shore.jpg" alt="Летний берег" />
+            </div>
+            <div class="shift-detail-body">
+              <span class="shift-tag">10–24 июня · 14 дней</span>
+              <h2>Карта берега</h2>
+              <p class="text-muted">Главная летняя смена: две недели у воды. Дети собирают «карту берега» — квесты, станции, выезды на конюшню и в музей. Для тех, кто хочет и устать, и подружиться.</p>
+              <ul class="program-list">
+                <li>Плавание и береговые станции каждый день</li>
+                <li>Длинный сюжетный квест на всю смену</li>
+                <li>Конюшня + музей в программе</li>
+                <li>English-блоки утром, творчество вечером</li>
+              </ul>
+              <div class="price-row">
+                <span class="price">89 000 ₽</span>
+                <span class="seats-pill">Осталось 6 мест</span>
+                <button type="button" class="btn btn-primary" data-open-modal data-shift="Карта берега">Забронировать</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="panel-glubokaya" role="tabpanel" data-panel="glubokaya">
+          <div class="shift-detail">
+            <div class="shift-detail-media">
+              <img src="images/hero.jpg" alt="Плавание" />
+            </div>
+            <div class="shift-detail-body">
+              <span class="shift-tag">20–28 июля · 9 дней</span>
+              <h2>Глубокая вода</h2>
+              <p class="text-muted">Спортивная смена для тех, кто уже не боится воды. Больше метров, техника, эстафеты. English и квесты остаются, но тон задаёт бассейн и открытая вода.</p>
+              <ul class="program-list">
+                <li>Усиленный блок плавания с тренером</li>
+                <li>Эстафеты и командный заплыв финала</li>
+                <li>English и короткие квесты для баланса</li>
+                <li>Рекомендуем от 9 лет или с опытом</li>
+              </ul>
+              <div class="price-row">
+                <span class="price">68 000 ₽</span>
+                <span class="seats-pill ok">Осталось 11 мест</span>
+                <button type="button" class="btn btn-primary" data-open-modal data-shift="Глубокая вода">Забронировать</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="panel-scena" role="tabpanel" data-panel="scena">
+          <div class="shift-detail">
+            <div class="shift-detail-media">
+              <img src="images/craft.jpg" alt="Творческая смена" />
+            </div>
+            <div class="shift-detail-body">
+              <span class="shift-tag">15–25 августа · 11 дней</span>
+              <h2>Сцена у воды</h2>
+              <p class="text-muted">Финал лета: смена, где сюжет выходит на сцену. Дети ставят показ для родителей, параллельно держат плавание и English. Для тех, кто любит быть на виду и в команде.</p>
+              <ul class="program-list">
+                <li>Постановка и показ в день выезда</li>
+                <li>Плавание и береговые игры</li>
+                <li>Конюшня или музей — один выезд</li>
+                <li>Мягкое закрытие сезона без спешки</li>
+              </ul>
+              <div class="price-row">
+                <span class="price">74 000 ₽</span>
+                <span class="seats-pill ok">Осталось 14 мест</span>
+                <button type="button" class="btn btn-primary" data-open-modal data-shift="Сцена у воды">Забронировать</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="shift-footnote">В стоимость: проживание, питание 5 раз, программа, выезды по смене, медсопровождение. Трансфер из Москвы — по запросу.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="footer-brand">Бухта</div>
+        <p>Камерный детский лагерь 7–15 лет. Плавание, English, квесты. Подмосковье.</p>
+      </div>
+      <div>
+        <h4>Разделы</h4>
+        <ul>
+          <li><a href="o-lagere.html">О лагере</a></li>
+          <li><a href="smeny.html">Смены</a></li>
+          <li><a href="otzyvy.html">Отзывы</a></li>
+          <li><a href="kontakty.html">Контакты</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Связь</h4>
+        <ul>
+          <li><a href="tel:+74951234567">+7 (495) 123-45-67</a></li>
+          <li><a href="mailto:hello@buhta.camp">hello@buhta.camp</a></li>
+          <li>Telegram: @buhta_camp</li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© 2026 Лагерь Бухта</span>
+      <span>ИП пример · оферта по запросу</span>
+    </div>
+  </footer>
+
+  <div class="modal" id="book-modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-dialog" role="dialog" aria-labelledby="modal-title">
+      <button type="button" class="modal-close" data-close-modal aria-label="Закрыть">×</button>
+      <h2 id="modal-title">Заявка на смену</h2>
+      <p class="modal-lead">Мы перезвоним и подберём заезд.</p>
+      <form data-book-form>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="m-name">Ваше имя</label>
+            <input id="m-name" name="name" required autocomplete="name" />
+          </div>
+          <div class="form-group">
+            <label for="m-phone">Телефон</label>
+            <input id="m-phone" name="phone" type="tel" required autocomplete="tel" />
+          </div>
+          <div class="form-group">
+            <label for="m-child">Имя ребёнка и возраст</label>
+            <input id="m-child" name="child" required />
+          </div>
+          <div class="form-group">
+            <label for="m-shift">Смена</label>
+            <select id="m-shift" name="shift">
+              <option value="">Подскажите, пожалуйста</option>
+              <option>Снежный фарватер</option>
+              <option>English Current</option>
+              <option>Карта берега</option>
+              <option>Глубокая вода</option>
+              <option>Сцена у воды</option>
+            </select>
+          </div>
+          <div class="form-group full">
+            <label for="m-note">Комментарий</label>
+            <textarea id="m-note" name="note"></textarea>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Отправить заявку</button>
+        <p class="form-note">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
+      </form>
+    </div>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>

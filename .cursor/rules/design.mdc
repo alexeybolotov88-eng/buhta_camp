@@ -1,0 +1,14 @@
+---
+description: Design system for Buhta camp site — follow when editing UI
+globs: ["**/*.html", "**/*.css", "**/*.js"]
+---
+
+# Бухта design rules
+
+- Brand: **Бухта**. Ages 7–15. Chamber groups (max 24). USP: swimming + English + quests.
+- Palette: foam `#F3F7F5`, deep `#14352F`, teal `#1F6B5E`, coral `#D4572A`, lemon `#E8C547`. One coral accent only.
+- Type: Syne (display) + Manrope (body). Never Inter / Roboto / Fredoka / purple gradients / cream-terracotta craft look.
+- Pages: index, o-lagere, smeny, otzyvy, kontakty. Sales-first copy in Russian.
+- Shift names: Снежный фарватер, English Current, Карта берега, Глубокая вода, Сцена у воды.
+- Signature: oversized «Бухта» wordmark on full-bleed water hero.
+- Prefer asymmetric layouts; avoid three equal feature cards and generic SaaS heroes.

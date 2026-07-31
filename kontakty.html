@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Контакты — Бухта</title>
+  <meta name="description" content="Связаться с лагерем Бухта: телефон, Telegram, заявка на смену. Подберём заезд под возраст ребёнка." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=5" />
+</head>
+<body>
+  <header class="site-header" id="header">
+    <div class="header-inner">
+      <a class="logo" href="index.html"><span class="logo-mark" aria-hidden="true"></span>Бухта</a>
+      <button class="nav-toggle" type="button" aria-label="Меню" aria-expanded="false" data-nav-toggle>
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" data-nav>
+        <a href="index.html">Главная</a>
+        <a href="o-lagere.html">О лагере</a>
+        <a href="smeny.html">Смены</a>
+        <a href="otzyvy.html">Отзывы</a>
+        <a href="kontakty.html" class="is-active">Контакты</a>
+        <a class="header-cta" href="#book" data-open-modal>Забронировать</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow">Контакты</p>
+        <h1>Напишите — подберём смену без спешки.</h1>
+        <p class="lead">Отвечаем в течение рабочего дня. Если мест на выбранную смену нет, честно скажем и предложим лист ожидания или другой заезд.</p>
+      </div>
+    </section>
+
+    <section class="section section-flush">
+      <div class="container contact-layout">
+        <aside class="contact-card reveal">
+          <h2>Бухта</h2>
+          <p>Камерный лагерь 7–15 лет. Отели в Подмосковье.</p>
+          <div class="contact-lines">
+            <div>
+              <span>Телефон</span>
+              <a href="tel:+74951234567">+7 (495) 123-45-67</a>
+            </div>
+            <div>
+              <span>Почта</span>
+              <a href="mailto:hello@buhta.camp">hello@buhta.camp</a>
+            </div>
+            <div>
+              <span>Telegram</span>
+              <a href="https://t.me/buhta_camp" target="_blank" rel="noopener">@buhta_camp</a>
+            </div>
+            <div>
+              <span>Офис (по записи)</span>
+              <a href="#">Москва, будни 11:00–19:00</a>
+            </div>
+          </div>
+        </aside>
+
+        <div class="form-card reveal">
+          <h2 class="section-title">Заявка на смену</h2>
+          <p class="modal-lead">Чем точнее возраст и опыт плавания, тем быстрее подскажем заезд.</p>
+          <form data-book-form>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="c-name">Ваше имя</label>
+                <input id="c-name" name="name" required autocomplete="name" />
+              </div>
+              <div class="form-group">
+                <label for="c-phone">Телефон</label>
+                <input id="c-phone" name="phone" type="tel" required autocomplete="tel" placeholder="+7" />
+              </div>
+              <div class="form-group">
+                <label for="c-child">Имя ребёнка и возраст</label>
+                <input id="c-child" name="child" required placeholder="Например: Лёва, 9" />
+              </div>
+              <div class="form-group">
+                <label for="c-shift">Смена</label>
+                <select id="c-shift" name="shift">
+                  <option value="">Подскажите, пожалуйста</option>
+                  <option>Снежный фарватер</option>
+                  <option>English Current</option>
+                  <option>Карта берега</option>
+                  <option>Глубокая вода</option>
+                  <option>Сцена у воды</option>
+                </select>
+              </div>
+              <div class="form-group full">
+                <label for="c-note">Комментарий</label>
+                <textarea id="c-note" name="note" placeholder="Плавает / не плавает, аллергии, вопросы по трансферу…"></textarea>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-mt">Отправить заявку</button>
+            <p class="form-note">Нажимая кнопку, вы соглашаетесь на обработку персональных данных. Это демо-форма: данные никуда не уходят.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="footer-brand">Бухта</div>
+        <p>Камерный детский лагерь 7–15 лет. Плавание, English, квесты. Подмосковье.</p>
+      </div>
+      <div>
+        <h4>Разделы</h4>
+        <ul>
+          <li><a href="o-lagere.html">О лагере</a></li>
+          <li><a href="smeny.html">Смены</a></li>
+          <li><a href="otzyvy.html">Отзывы</a></li>
+          <li><a href="kontakty.html">Контакты</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Связь</h4>
+        <ul>
+          <li><a href="tel:+74951234567">+7 (495) 123-45-67</a></li>
+          <li><a href="mailto:hello@buhta.camp">hello@buhta.camp</a></li>
+          <li>Telegram: @buhta_camp</li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© 2026 Лагерь Бухта</span>
+      <span>ИП пример · оферта по запросу</span>
+    </div>
+  </footer>
+
+  <div class="modal" id="book-modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-dialog" role="dialog" aria-labelledby="modal-title">
+      <button type="button" class="modal-close" data-close-modal aria-label="Закрыть">×</button>
+      <h2 id="modal-title">Заявка на смену</h2>
+      <p class="modal-lead">Мы перезвоним и подберём заезд.</p>
+      <form data-book-form>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="m-name">Ваше имя</label>
+            <input id="m-name" name="name" required autocomplete="name" />
+          </div>
+          <div class="form-group">
+            <label for="m-phone">Телефон</label>
+            <input id="m-phone" name="phone" type="tel" required autocomplete="tel" />
+          </div>
+          <div class="form-group">
+            <label for="m-child">Имя ребёнка и возраст</label>
+            <input id="m-child" name="child" required />
+          </div>
+          <div class="form-group">
+            <label for="m-shift">Смена</label>
+            <select id="m-shift" name="shift">
+              <option value="">Подскажите, пожалуйста</option>
+              <option>Снежный фарватер</option>
+              <option>English Current</option>
+              <option>Карта берега</option>
+              <option>Глубокая вода</option>
+              <option>Сцена у воды</option>
+            </select>
+          </div>
+          <div class="form-group full">
+            <label for="m-note">Комментарий</label>
+            <textarea id="m-note" name="note"></textarea>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Отправить заявку</button>
+        <p class="form-note">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
+      </form>
+    </div>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
