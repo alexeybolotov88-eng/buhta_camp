@@ -133,4 +133,5 @@
   } else {
     reveals.forEach((el) => el.classList.add("is-in"));
   }
+
 })();

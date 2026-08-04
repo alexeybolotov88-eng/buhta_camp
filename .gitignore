@@ -1,0 +1,7 @@
+.cursor/mcp.json
+.env
+.env.*
+!.env.example
+.tmp-*/
+http*.log
+http*.pid

@@ -3,27 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Отзывы родителей — Бухта</title>
-  <meta name="description" content="Отзывы родителей о камерном лагере Бухта: плавание, English, квесты, ежедневная связь со сменой." />
+  <title>Отзывы родителей — Бухта Camp</title>
+  <meta name="description" content="Отзывы родителей о лагере Бухта Camp: плавание, English, квесты, ежедневная связь со сменой." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=5" />
+  <link rel="stylesheet" href="styles.css?v=9" />
 </head>
 <body>
   <header class="site-header" id="header">
     <div class="header-inner">
-      <a class="logo" href="index.html"><span class="logo-mark" aria-hidden="true"></span>Бухта</a>
-      <button class="nav-toggle" type="button" aria-label="Меню" aria-expanded="false" data-nav-toggle>
-        <span></span><span></span><span></span>
-      </button>
+      <a class="logo" href="index.html" aria-label="Бухта Camp — на главную">
+        <img class="logo-img" src="images/brand/logo-05.svg" alt="Бухта Camp" width="118" height="42" />
+      </a>
+      <div class="header-actions">
+        <a class="header-cta header-cta-mobile" href="#book" data-open-modal>Заявка</a>
+        <button class="nav-toggle" type="button" aria-label="Меню" aria-expanded="false" data-nav-toggle>
+          <span></span><span></span><span></span>
+        </button>
+      </div>
       <nav class="nav" data-nav>
         <a href="index.html">Главная</a>
         <a href="o-lagere.html">О лагере</a>
         <a href="smeny.html">Смены</a>
         <a href="otzyvy.html" class="is-active">Отзывы</a>
         <a href="kontakty.html">Контакты</a>
-        <a class="header-cta" href="#book" data-open-modal>Забронировать</a>
+        <a class="header-cta" href="#book" data-open-modal>Оставить заявку</a>
       </nav>
     </div>
   </header>
@@ -65,7 +70,7 @@
 
         <article class="review-card reveal">
           <div class="stars" aria-hidden="true">★★★★★</div>
-          <p class="review-text">Конюшня и музей не были «галочкой»: вожатые готовили детей заранее, было о чём потом рассказывать за ужином. Показ на «Сцене у воды» родители смотрели стоя.</p>
+          <p class="review-text">Конюшня и музей не были «галочкой»: команда готовила детей заранее, было о чём потом рассказывать за ужином. Показ на «Сцене у воды» родители смотрели стоя.</p>
           <p class="review-meta"><strong>Ирина П.</strong> мама Никиты, 10 лет · Сцена у воды</p>
         </article>
 
@@ -80,11 +85,11 @@
     <section class="section section-flush">
       <div class="container">
         <div class="cta-band reveal">
-          <div>
-            <h2>Готовы к своей первой Бухте?</h2>
+          <div class="cta-band-copy">
+            <h2>Готовы к первой смене в Бухта Camp?</h2>
             <p>Напишите возраст ребёнка — подскажем смену и свободные даты.</p>
           </div>
-          <button type="button" class="btn btn-primary" data-open-modal>Оставить заявку</button>
+          <button type="button" class="btn btn-primary btn-cta-lg" data-open-modal>Оставить заявку</button>
         </div>
       </div>
     </section>
@@ -93,8 +98,10 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
-        <div class="footer-brand">Бухта</div>
-        <p>Камерный детский лагерь 7–15 лет. Плавание, English, квесты. Подмосковье.</p>
+        <div class="footer-brand">
+          <img class="logo-img logo-img-footer" src="images/brand/logo-05-light.svg" alt="Бухта Camp" width="140" height="50" />
+        </div>
+        <p>Детский лагерь 7–15 лет у воды. Плавание, English, квесты. Небольшие группы в смене. Подмосковье.</p>
       </div>
       <div>
         <h4>Разделы</h4>
@@ -115,7 +122,7 @@
       </div>
     </div>
     <div class="container footer-bottom">
-      <span>© 2026 Лагерь Бухта</span>
+      <span>© 2026 Бухта Camp</span>
       <span>ИП пример · оферта по запросу</span>
     </div>
   </footer>

@@ -1,7 +1,7 @@
 ---
 version: alpha
-name: Бухта
-description: Chamber kids camp 7–15 in Moscow region. Swimming, English, quests. Sales-first multi-page site.
+name: Бухта Camp
+description: Kids camp 7–15 in Moscow region. Swimming, English, quests. Sales-first multi-page site.
 colors:
   foam: "#F3F7F5"
   mist: "#E6F0EC"
@@ -31,17 +31,18 @@ spacing:
   container: 1180px
 ---
 
-# Бухта — design system
+# Бухта Camp — design system
 
 ## Overview
 
-Outdoor chamber camp for parents who want a real program, not a babysitting warehouse. Visual language: cool forest mist + one coral CTA. Asymmetric layouts, strong photography, quiet chrome. Signature: oversized brand wordmark against full-bleed water/kids photo.
+Kids camp for parents who want a real program and clear safety rules — not a babysitting warehouse. Visual language: cool forest mist + one coral CTA. Asymmetric layouts, strong photography, quiet chrome. Signature: logo 05 (БУХТА + traced wave + CAMP).
 
 ## Brand
 
-- Name: **Бухта**
-- Promise: Камерный лагерь у воды. Плавание, English, квесты.
-- USP: до 24 детей, вожатые 1:6, отели в Подмосковье, ежедневная связь с родителями, экскурсии на конюшню и в музей летом.
+- Name: **Бухта Camp**
+- Hero UVP: «Отпускаете спокойно. Узнаёте — каждый вечер.»
+- Proof line: небольшие группы у воды · плавание · English · квесты · 2 взрослых в смене · отели · фотоотчёт каждый вечер
+- UVP (cold audience): безопасность через предсказуемость связи + видимость ребёнка в маленькой смене.
 
 ## Colors
 
