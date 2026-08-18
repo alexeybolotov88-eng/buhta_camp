@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1920, initial-scale=1" />
+  <title>Бухта Camp — шапка Instagram</title>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; box-sizing: border-box; }
+    html, body { width: 1920px; height: 1080px; overflow: hidden; }
+    body {
+      font-family: Manrope, sans-serif;
+      background: #e6f0ec;
+      color: #15241f;
+    }
+    .board {
+      width: 1920px;
+      height: 1080px;
+      display: grid;
+      grid-template-columns: 520px 1fr;
+      padding: 48px 56px;
+      gap: 48px;
+    }
+    .phone-wrap {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    iframe {
+      width: 390px;
+      height: 844px;
+      border: 0;
+      border-radius: 36px;
+      box-shadow: 0 24px 60px rgba(20, 53, 47, 0.18);
+      background: #fff;
+    }
+    .side { display: flex; flex-direction: column; padding: 12px 8px 0 0; }
+    .eyebrow {
+      font-weight: 800;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      font-size: 13px;
+      color: #1f6b5e;
+    }
+    h1 {
+      font-family: Syne, sans-serif;
+      font-size: 64px;
+      letter-spacing: -0.04em;
+      line-height: 0.95;
+      margin: 12px 0 10px;
+    }
+    .lead { font-size: 22px; color: #5c6e66; font-weight: 600; max-width: 720px; }
+    .card {
+      margin-top: 28px;
+      background: #fff;
+      border-radius: 24px;
+      padding: 28px 32px;
+      box-shadow: 0 10px 32px rgba(20, 53, 47, 0.06);
+    }
+    .card h2 {
+      font-family: Syne, sans-serif;
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+    .card pre {
+      font-family: Manrope, sans-serif;
+      font-size: 20px;
+      line-height: 1.45;
+      font-weight: 600;
+      white-space: pre-wrap;
+    }
+    .meta {
+      display: flex;
+      gap: 28px;
+      margin-top: 18px;
+      font-size: 16px;
+      font-weight: 700;
+      color: #1f6b5e;
+    }
+    .note {
+      margin-top: auto;
+      font-size: 15px;
+      color: #5c6e66;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="board">
+    <div class="phone-wrap">
+      <iframe src="profile-a.html" title="Макет профиля A"></iframe>
+    </div>
+    <div class="side">
+      <p class="eyebrow">Instagram · вариант A</p>
+      <h1>Шапка профиля<br />Бухта Camp</h1>
+      <p class="lead">Имя, био и ссылка укладываются в лимиты Instagram. Коралловый акцент только на заявке.</p>
+      <div class="card">
+        <h2>Бухта Camp · 7–15 лет</h2>
+        <pre>Лагерь у воды, 7–15 · Подмосковье
+2 взрослых в смене · фотоотчёт каждый вечер
+Плавание · English · квесты
+↓ Заявка на смену</pre>
+      </div>
+      <div class="meta">
+        <span>@buhta.camp</span>
+        <span>buhta.camp</span>
+        <span>Детский лагерь</span>
+      </div>
+      <p class="note">Варианты B и C — в copy.md. Аватар, актуальные и шапка ленты — в export/.</p>
+    </div>
+  </div>
+</body>
+</html>
