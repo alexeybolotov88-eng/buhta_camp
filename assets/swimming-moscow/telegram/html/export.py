@@ -50,6 +50,7 @@ def main() -> None:
         jobs = [
             ("html/telegram-september-1280x720.html", "telegram-september-1280x720.png", 1280, 720),
             ("html/telegram-september-1280x720.html", "telegram-september-1080x1080.png", 1080, 1080),
+            ("html/telegram-september-cartoon-1080.html", "telegram-september-cartoon-1080.png", 1080, 1080),
         ]
         for rel, name, w, h in jobs:
             out = EXPORT / name
