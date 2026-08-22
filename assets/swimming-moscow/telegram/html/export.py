@@ -56,6 +56,9 @@ def main() -> None:
             ("html/variant-03-geometric.html", "variant-03-geometric-1080.png", 1080, 1080),
             ("html/variant-04-retro.html", "variant-04-retro-1080.png", 1080, 1080),
             ("html/variant-05-papercut.html", "variant-05-papercut-1080.png", 1080, 1080),
+            ("html/ref-01-3d-funswim.html", "ref-01-3d-funswim-1080.png", 1080, 1080),
+            ("html/ref-02-flat-welcome.html", "ref-02-flat-welcome-1080.png", 1080, 1080),
+            ("html/ref-03-afisha-pools.html", "ref-03-afisha-pools-1080.png", 1080, 1080),
         ]
         for rel, name, w, h in jobs:
             out = EXPORT / name
