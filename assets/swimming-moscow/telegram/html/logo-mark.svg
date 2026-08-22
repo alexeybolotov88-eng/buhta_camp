@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" role="img" aria-label="Swimming Moscow">
+  <circle cx="100" cy="100" r="94" fill="#E33D2D"/>
+  <ellipse cx="100" cy="100" rx="82" ry="32" transform="rotate(-35 100 100)" fill="#6BB4F0"/>
+  <!-- Swimmer dive pose along blue band: head top-right, legs bottom-left -->
+  <g transform="rotate(-35 100 100)">
+    <!-- legs -->
+    <path d="M42 108 C50 102 58 98 66 96" stroke="#111" stroke-width="6" stroke-linecap="round" fill="none"/>
+    <path d="M46 116 C54 110 62 104 70 100" stroke="#111" stroke-width="6" stroke-linecap="round" fill="none"/>
+    <!-- trunks -->
+    <ellipse cx="76" cy="100" rx="12" ry="10" fill="#111"/>
+    <!-- torso -->
+    <path d="M76 100 C90 92 110 90 128 94 C136 96 138 104 132 110 C118 118 96 116 82 110 C74 106 72 102 76 100Z" fill="#fff" stroke="#111" stroke-width="2.6" stroke-linejoin="round"/>
+    <!-- head -->
+    <circle cx="138" cy="96" r="11" fill="#fff" stroke="#111" stroke-width="2.6"/>
+    <!-- cap -->
+    <path d="M128 90 C134 80 148 80 152 92 C146 86 136 86 128 90Z" fill="#111"/>
+    <!-- arms forward -->
+    <path d="M132 98 C146 90 158 86 172 84" stroke="#111" stroke-width="5.5" stroke-linecap="round" fill="none"/>
+    <path d="M130 104 C144 100 156 98 170 98" stroke="#111" stroke-width="5.5" stroke-linecap="round" fill="none"/>
+    <circle cx="174" cy="84" r="4.2" fill="#fff" stroke="#111" stroke-width="2.2"/>
+    <circle cx="172" cy="98" r="4.2" fill="#fff" stroke="#111" stroke-width="2.2"/>
+  </g>
+</svg>
