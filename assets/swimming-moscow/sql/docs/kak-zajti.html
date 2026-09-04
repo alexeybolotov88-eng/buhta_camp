@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swimming Moscow — как зайти</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #e8f3fb;
+      --bg-deep: #d4eaf8;
+      --surface: rgba(255, 255, 255, 0.88);
+      --ink: #0b1f33;
+      --muted: #4a657a;
+      --blue: #0b6bcb;
+      --blue-dark: #084a8f;
+      --red: #d62828;
+      --line: rgba(11, 31, 51, 0.12);
+      --ok: #0f7a4c;
+      --warn: #b45309;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Manrope, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 600px at 10% -10%, #b9ddf5 0%, transparent 55%),
+        radial-gradient(900px 500px at 100% 0%, #f7c9c9 0%, transparent 45%),
+        linear-gradient(160deg, var(--bg), var(--bg-deep));
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+    .deck {
+      width: min(1120px, 100vw);
+      height: min(630px, 100vh);
+      margin: auto;
+      position: absolute;
+      inset: 0;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(8, 40, 80, 0.18);
+      background: linear-gradient(145deg, rgba(255,255,255,0.72), rgba(232,243,251,0.95));
+      border: 1px solid rgba(255,255,255,0.7);
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      padding: 48px 56px 72px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.35s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .slide.active { opacity: 1; visibility: visible; }
+
+    .brand {
+      font-family: Unbounded, sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--blue);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-family: Unbounded, sans-serif;
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.15;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-family: Unbounded, sans-serif;
+      font-size: clamp(22px, 3vw, 30px);
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+
+    .lead {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 46ch;
+      line-height: 1.45;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 28px;
+      flex: 1;
+      align-items: center;
+      margin-top: 18px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 22px 24px;
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-mark {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background:
+        linear-gradient(135deg, transparent 42%, var(--blue) 42% 58%, transparent 58%),
+        radial-gradient(circle at 50% 50%, var(--red) 0 70%, transparent 71%);
+      margin: 0 auto 18px;
+      position: relative;
+      box-shadow: 0 10px 30px rgba(214, 40, 40, 0.25);
+    }
+    .hero-mark::after {
+      content: "";
+      position: absolute;
+      inset: 34% 28%;
+      background: #111;
+      clip-path: polygon(10% 55%, 40% 35%, 70% 45%, 95% 30%, 80% 70%, 45% 60%, 20% 75%);
+      opacity: 0.9;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+      background: var(--surface);
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+    }
+    th, td {
+      padding: 12px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+    th {
+      background: rgba(11, 107, 203, 0.08);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--blue-dark);
+      font-weight: 700;
+    }
+    tr:last-child td { border-bottom: none; }
+    code, .mono {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      background: rgba(11, 107, 203, 0.08);
+      padding: 2px 7px;
+      border-radius: 6px;
+      font-size: 0.95em;
+    }
+    .ok { color: var(--ok); font-weight: 700; }
+    .warn { color: var(--warn); font-weight: 700; }
+    .muted { color: var(--muted); }
+
+    .steps {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      margin-top: 8px;
+    }
+    .steps li {
+      display: grid;
+      grid-template-columns: 36px 1fr;
+      gap: 12px;
+      align-items: start;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 12px 14px;
+    }
+    .steps .n {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: var(--blue);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      font-family: Unbounded, sans-serif;
+      font-size: 14px;
+    }
+
+    .nav {
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      background: rgba(255,255,255,0.75);
+      border-top: 1px solid var(--line);
+      backdrop-filter: blur(10px);
+    }
+    .nav button {
+      border: none;
+      background: var(--blue);
+      color: #fff;
+      font-family: Manrope, sans-serif;
+      font-weight: 700;
+      padding: 10px 16px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    .nav button:disabled { opacity: 0.35; cursor: default; }
+    .dots { display: flex; gap: 8px; }
+    .dots span {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: rgba(11, 107, 203, 0.25);
+    }
+    .dots span.on { background: var(--blue); }
+
+    .note {
+      margin-top: 14px;
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    @media (max-width: 820px) {
+      body { overflow: auto; }
+      .deck {
+        position: relative;
+        width: 100%;
+        height: auto;
+        min-height: 100vh;
+        border-radius: 0;
+      }
+      .slide {
+        position: relative;
+        opacity: 1;
+        visibility: visible;
+        display: none;
+        padding: 28px 20px 80px;
+        min-height: 100vh;
+      }
+      .slide.active { display: flex; }
+      .grid-2 { grid-template-columns: 1fr; }
+      table { font-size: 13px; }
+      th, td { padding: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="deck" id="deck">
+
+    <!-- 1 -->
+    <section class="slide active" data-slide="0">
+      <div class="brand">Swimming Moscow · SQL / доступ</div>
+      <div class="grid-2">
+        <div>
+          <h1>Как зайти</h1>
+          <p class="lead">Логины и роли из сидов схемы. Сейчас это доступ к данным в MySQL — веб-админка ещё не подключена к этому файлу.</p>
+          <p class="note">Файл: <span class="mono">assets/swimming-moscow/sql/swimming_moscow_schema.sql</span></p>
+        </div>
+        <div class="card" style="text-align:center">
+          <div class="hero-mark" aria-hidden="true"></div>
+          <div style="font-family:Unbounded,sans-serif;font-weight:700;font-size:20px">swimmingmoscow.ru</div>
+          <div class="muted" style="margin-top:8px">База · роли · FAQ · расписание</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2 -->
+    <section class="slide" data-slide="1">
+      <div class="brand">Админ-панель (сиды)</div>
+      <h2>Вход администратора</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Поле</th>
+            <th>Значение</th>
+            <th>Где лежит</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Логин</td>
+            <td><code>admin</code></td>
+            <td>таблица <code>admin_users</code></td>
+          </tr>
+          <tr>
+            <td>Пароль</td>
+            <td><code>admin123</code></td>
+            <td>хеш <code>SHA2(password, 256)</code></td>
+          </tr>
+          <tr>
+            <td>Роль</td>
+            <td><span class="ok">супер-админ</span> (<code>is_super_admin = 1</code>)</td>
+            <td>роль <code>admin</code></td>
+          </tr>
+          <tr>
+            <td>Email</td>
+            <td><code>admin@swimmingmoscow.ru</code></td>
+            <td><code>admin_users.email</code></td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="note">Проверка в SQL: <code>SELECT * FROM admin_users WHERE login='admin' AND password_hash = SHA2('admin123', 256);</code></p>
+    </section>
+
+    <!-- 3 -->
+    <section class="slide" data-slide="2">
+      <div class="brand">Роли</div>
+      <h2>Кто какой доступ имеет</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Роль</th>
+            <th>Код</th>
+            <th>Для кого</th>
+            <th>Права (кратко)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Администратор</td>
+            <td><code>admin</code></td>
+            <td>владелец / супер-админ</td>
+            <td class="ok">все модули</td>
+          </tr>
+          <tr>
+            <td>Менеджер</td>
+            <td><code>manager</code></td>
+            <td>администраторы смены</td>
+            <td>FAQ, новости, расписание, заявки, прайс</td>
+          </tr>
+          <tr>
+            <td>Тренер</td>
+            <td><code>teacher</code></td>
+            <td>тренерский состав</td>
+            <td>расписание, FAQ, заявки (просмотр)</td>
+          </tr>
+          <tr>
+            <td>Пользователь</td>
+            <td><code>user</code></td>
+            <td>родитель / клиент сайта</td>
+            <td>кабинет сайта, не админка</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 4 -->
+    <section class="slide" data-slide="3">
+      <div class="brand">Тестовый клиент</div>
+      <h2>Пользователь сайта (пример)</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Поле</th>
+            <th>Значение</th>
+            <th>Таблица</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Email</td>
+            <td><code>parent@example.com</code></td>
+            <td><code>users</code></td>
+          </tr>
+          <tr>
+            <td>Пароль</td>
+            <td><code>parent123</code></td>
+            <td>хеш SHA2-256</td>
+          </tr>
+          <tr>
+            <td>Профиль</td>
+            <td>Анна Иванова · ребёнок Миша</td>
+            <td><code>user_profiles</code></td>
+          </tr>
+          <tr>
+            <td>Филиал</td>
+            <td>Качаловский</td>
+            <td><code>preferred_branch_id</code></td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="note"><span class="warn">Важно:</span> это демо-данные для разработки. На прод пароли смените и используйте bcrypt/argon2.</p>
+    </section>
+
+    <!-- 5 -->
+    <section class="slide" data-slide="4">
+      <div class="brand">Запуск БД</div>
+      <h2>Как поднять и зайти в базу</h2>
+      <ol class="steps">
+        <li>
+          <div class="n">1</div>
+          <div>
+            <strong>Импорт скрипта</strong><br>
+            <code>mysql -u root -p swimming_moscow &lt; swimming_moscow_schema.sql</code>
+          </div>
+        </li>
+        <li>
+          <div class="n">2</div>
+          <div>
+            <strong>Открыть клиент</strong><br>
+            TablePlus / DBeaver / phpMyAdmin / <code>mysql</code> CLI → база <code>swimming_moscow</code>
+          </div>
+        </li>
+        <li>
+          <div class="n">3</div>
+          <div>
+            <strong>Проверить админа</strong><br>
+            таблица <code>admin_users</code> → login <code>admin</code>
+          </div>
+        </li>
+        <li>
+          <div class="n">4</div>
+          <div>
+            <strong>Сайт FAQ</strong><br>
+            только опубликованные: VIEW <code>v_faq_with_categories</code>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- 6 -->
+    <section class="slide" data-slide="5">
+      <div class="brand">FAQ: админка vs сайт</div>
+      <h2>Что видит кто</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Где</th>
+            <th>Условие</th>
+            <th>Что видно</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Админка</td>
+            <td><code>faq_items.is_active = 1</code></td>
+            <td>все вопросы, включая черновики</td>
+          </tr>
+          <tr>
+            <td>Сайт</td>
+            <td><code>is_active = 1</code> и <code>is_published = 1</code></td>
+            <td>только опубликованные</td>
+          </tr>
+          <tr>
+            <td>VIEW сайта</td>
+            <td><code>v_faq_with_categories</code></td>
+            <td>готовая выборка с категориями</td>
+          </tr>
+          <tr>
+            <td>Сиды сейчас</td>
+            <td>32 опубликовано · 1 черновик</td>
+            <td>черновик — вечерний отчёт админа</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="note">Публикация: админ ставит <code>is_published = 1</code> и <code>published_at</code> — вопрос появляется на сайте.</p>
+    </section>
+
+    <!-- 7 -->
+    <section class="slide" data-slide="6">
+      <div class="brand">Итог</div>
+      <h2>Коротко</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Задача</th>
+            <th>Ответ</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Зайти как админ (сиды)</td>
+            <td><code>admin</code> / <code>admin123</code></td>
+          </tr>
+          <tr>
+            <td>Зайти как клиент (тест)</td>
+            <td><code>parent@example.com</code> / <code>parent123</code></td>
+          </tr>
+          <tr>
+            <td>Где смотреть данные</td>
+            <td>MySQL после импорта SQL-файла</td>
+          </tr>
+          <tr>
+            <td>Есть ли форма входа на сайте?</td>
+            <td><span class="warn">Пока нет UI</span> — только схема и сиды. Форму логина можно сделать следующим шагом.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="note">Нужна страница «Вход» для админки или кабинета родителя — напишите, соберём поверх этой схемы.</p>
+    </section>
+
+    <div class="nav">
+      <button id="prev" type="button">← Назад</button>
+      <div class="dots" id="dots" aria-hidden="true"></div>
+      <button id="next" type="button">Далее →</button>
+    </div>
+  </div>
+
+  <script>
+    const slides = [...document.querySelectorAll('.slide')];
+    const dots = document.getElementById('dots');
+    const prev = document.getElementById('prev');
+    const next = document.getElementById('next');
+    let i = 0;
+
+    slides.forEach((_, idx) => {
+      const d = document.createElement('span');
+      if (idx === 0) d.classList.add('on');
+      dots.appendChild(d);
+    });
+
+    function show(n) {
+      i = Math.max(0, Math.min(slides.length - 1, n));
+      slides.forEach((s, idx) => s.classList.toggle('active', idx === i));
+      [...dots.children].forEach((d, idx) => d.classList.toggle('on', idx === i));
+      prev.disabled = i === 0;
+      next.disabled = i === slides.length - 1;
+    }
+
+    prev.addEventListener('click', () => show(i - 1));
+    next.addEventListener('click', () => show(i + 1));
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); show(i + 1); }
+      if (e.key === 'ArrowLeft') show(i - 1);
+    });
+    show(0);
+  </script>
+</body>
+</html>
