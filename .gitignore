@@ -5,3 +5,4 @@
 .tmp-*/
 http*.log
 http*.pid
+output/
