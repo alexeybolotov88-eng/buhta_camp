@@ -5,3 +5,5 @@
 .tmp-*/
 http*.log
 http*.pid
+output/
+scripts/__pycache__/
