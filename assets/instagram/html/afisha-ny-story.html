@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=1080, initial-scale=1" />
-  <title>Бухта Camp — Новогодняя смена 2–9 января (Stories)</title>
+  <title>Бухта Camp — Новогодняя смена 2–9 января · Тропикана Парк (Stories)</title>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -21,12 +21,12 @@
     .photo {
       position: absolute; inset: 0;
       background: url("../photos/buhta-mist-bay.png") 50% 40% / cover no-repeat;
-      filter: saturate(0.82) brightness(0.98);
+      filter: saturate(0.82) brightness(0.96);
     }
     .shade {
       position: absolute; inset: 0;
       background:
-        linear-gradient(180deg, rgba(20,53,47,0.66) 0%, rgba(20,53,47,0.24) 22%, rgba(20,53,47,0.44) 52%, rgba(20,53,47,0.95) 100%),
+        linear-gradient(180deg, rgba(20,53,47,0.68) 0%, rgba(20,53,47,0.26) 20%, rgba(20,53,47,0.48) 50%, rgba(20,53,47,0.96) 100%),
         radial-gradient(110% 60% at 50% 4%, rgba(232,197,71,0.16), transparent 55%);
     }
     .frost {
@@ -62,7 +62,7 @@
       position: relative;
       z-index: 3;
       width: 100%; height: 100%;
-      padding: 150px 96px 170px;
+      padding: 150px 96px 160px;
       display: flex;
       flex-direction: column;
     }
@@ -84,106 +84,90 @@
     .flake-lg svg { width: 100%; height: 100%; display: block; }
 
     .eyebrow {
-      margin-top: 90px;
+      margin-top: 78px;
       font-weight: 700;
       font-size: 28px;
-      letter-spacing: 0.30em;
+      letter-spacing: 0.28em;
       text-transform: uppercase;
       color: #e8c547;
     }
     .headline {
       font-family: Syne, sans-serif;
       font-weight: 800;
-      font-size: 168px;
+      font-size: 158px;
       line-height: 0.86;
       letter-spacing: -0.045em;
       color: #ffffff;
-      margin-top: 28px;
+      margin-top: 24px;
       text-shadow: 0 2px 50px rgba(20,53,47,0.4);
     }
     .wave {
-      width: 440px; height: 40px; color: #e8c547;
-      margin: 40px 0 0;
+      width: 400px; height: 36px; color: #e8c547;
+      margin: 34px 0 0;
     }
     .wave svg { width: 100%; height: 100%; display: block; }
-    .sub {
-      margin-top: 34px;
-      font-weight: 600;
-      font-size: 38px;
-      line-height: 1.32;
-      color: rgba(243,247,245,0.92);
-      max-width: 760px;
+    .hotel {
+      margin-top: 30px;
+      font-weight: 700;
+      font-size: 40px;
+      color: rgba(243,247,245,0.94);
     }
+    .hotel b { color: #ffffff; font-weight: 800; }
 
     .spacer { flex: 1; }
+
+    .prog-label {
+      font-weight: 700;
+      font-size: 26px;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: rgba(243,247,245,0.72);
+      margin-bottom: 28px;
+    }
+    .program { display: flex; flex-direction: column; gap: 22px; }
+    .pitem {
+      display: flex; align-items: center; gap: 28px;
+      font-family: Syne, sans-serif;
+      font-weight: 800;
+      font-size: 58px;
+      letter-spacing: -0.02em;
+      color: #f3f7f5;
+      line-height: 1;
+    }
+    .pitem.star { color: #e8c547; }
+    .bullet { width: 50px; height: 50px; flex: none; color: #e8c547; }
+    .bullet svg { width: 100%; height: 100%; display: block; }
 
     .dateblock {
       display: flex;
       align-items: flex-end;
       gap: 32px;
-      padding: 42px 0 12px;
+      margin-top: 56px;
+      padding-top: 40px;
       border-top: 1px solid rgba(243,247,245,0.24);
     }
     .date-big {
       font-family: Syne, sans-serif;
       font-weight: 800;
-      font-size: 150px;
+      font-size: 130px;
       line-height: 0.9;
       letter-spacing: -0.04em;
       color: #e8c547;
     }
-    .date-meta { padding-bottom: 22px; }
+    .date-meta { padding-bottom: 18px; }
     .date-meta .d1 {
       font-family: Syne, sans-serif;
       font-weight: 800;
-      font-size: 52px;
+      font-size: 50px;
       letter-spacing: -0.02em;
       color: #ffffff;
       line-height: 1;
     }
     .date-meta .d2 {
-      margin-top: 12px;
+      margin-top: 10px;
       font-weight: 700;
-      font-size: 34px;
+      font-size: 32px;
       color: rgba(243,247,245,0.82);
-    }
-
-    .facts {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-      margin-top: 46px;
-    }
-    .chip {
-      font-weight: 700;
-      font-size: 34px;
-      color: #14352f;
-      background: rgba(243,247,245,0.94);
-      padding: 20px 34px;
-      border-radius: 999px;
-    }
-    .chip.alt { background: rgba(232,197,71,0.96); }
-
-    .cta-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: 64px;
-    }
-    .cta {
-      background: #d4572a;
-      color: #fff;
-      font-weight: 800;
-      font-size: 42px;
-      letter-spacing: -0.01em;
-      padding: 34px 60px;
-      border-radius: 999px;
-      box-shadow: 0 20px 50px rgba(212,87,42,0.4);
-    }
-    .site {
-      font-weight: 700;
-      font-size: 38px;
-      color: #f3f7f5;
     }
   </style>
 </head>
@@ -210,35 +194,47 @@
         </div>
       </div>
 
-      <div class="eyebrow">Новогодние каникулы · Подмосковье</div>
+      <div class="eyebrow">Новогодние каникулы · 2–9 января</div>
       <h1 class="headline">Новогодняя<br />смена</h1>
       <div class="wave">
         <svg viewBox="20 38 180 18" fill="none" aria-hidden="true">
           <path fill="currentColor" d="M28.00,47.91 C31.63,47.91 35.25,44.40 38.88,44.40 C42.50,44.40 46.13,42.24 49.76,42.24 C53.38,42.24 57.01,40.99 60.63,40.99 C64.26,40.99 67.88,40.88 71.51,40.88 C75.14,40.88 78.76,41.32 82.39,41.32 C86.01,41.32 89.64,42.91 93.27,42.91 C96.89,42.91 100.52,44.43 104.14,44.43 C108.05,44.43 111.95,46.87 115.86,46.87 C119.48,46.87 123.11,48.99 126.73,48.99 C130.36,48.99 133.99,49.84 137.61,49.84 C141.24,49.84 144.86,50.01 148.49,50.01 C152.12,50.01 155.74,49.51 159.37,49.51 C162.99,49.51 166.62,47.72 170.24,47.72 C173.87,47.72 177.50,45.01 181.12,45.01 C184.75,45.01 188.37,41.83 192.00,41.83 L192.00,41.83 C188.37,41.83 184.75,45.34 181.12,45.34 C177.50,45.34 173.87,48.71 170.24,48.71 C166.62,48.71 162.99,51.19 159.37,51.19 C155.74,51.19 152.12,52.51 148.49,52.51 C144.86,52.51 141.24,53.29 137.61,53.29 C133.99,53.29 130.36,53.53 126.73,53.53 C123.11,53.53 119.48,52.61 115.86,52.61 C111.95,52.61 108.05,50.17 104.14,50.17 C100.52,50.17 96.89,47.44 93.27,47.44 C89.64,47.44 86.01,44.77 82.39,44.77 C78.76,44.77 75.14,43.38 71.51,43.38 C67.88,43.38 64.26,42.66 60.63,42.66 C57.01,42.66 53.38,43.23 49.76,43.23 C46.13,43.23 42.50,44.73 38.88,44.73 C35.25,44.73 31.63,47.91 28.00,47.91 Z"/>
         </svg>
       </div>
-      <p class="sub">Каникулы у воды для детей 7–15 лет.<br />Небольшая смена, тёплые отели Подмосковья, фотоотчёт родителям каждый вечер.</p>
+      <p class="hotel">Отель <b>«Тропикана&nbsp;Парк»</b> · Подмосковье · <span style="white-space:nowrap">7–15 лет</span></p>
 
       <div class="spacer"></div>
+
+      <div class="prog-label">В программе</div>
+      <div class="program">
+        <div class="pitem star">
+          <span class="bullet"><svg viewBox="0 0 100 100" fill="none"><g stroke="currentColor" stroke-width="7" stroke-linecap="round"><path d="M50 12 V88 M12 50 H88"/><path d="M26 26 L74 74 M74 26 L26 74"/></g></svg></span>
+          Новогоднее шоу
+        </div>
+        <div class="pitem">
+          <span class="bullet"><svg viewBox="0 0 100 100" fill="none"><g stroke="currentColor" stroke-width="7" stroke-linecap="round"><path d="M50 12 V88 M12 50 H88"/><path d="M26 26 L74 74 M74 26 L26 74"/></g></svg></span>
+          Творческие мастер-классы
+        </div>
+        <div class="pitem">
+          <span class="bullet"><svg viewBox="0 0 100 100" fill="none"><g stroke="currentColor" stroke-width="7" stroke-linecap="round"><path d="M50 12 V88 M12 50 H88"/><path d="M26 26 L74 74 M74 26 L26 74"/></g></svg></span>
+          Плавание
+        </div>
+        <div class="pitem">
+          <span class="bullet"><svg viewBox="0 0 100 100" fill="none"><g stroke="currentColor" stroke-width="7" stroke-linecap="round"><path d="M50 12 V88 M12 50 H88"/><path d="M26 26 L74 74 M74 26 L26 74"/></g></svg></span>
+          Вечеринки и дискотеки
+        </div>
+        <div class="pitem">
+          <span class="bullet"><svg viewBox="0 0 100 100" fill="none"><g stroke="currentColor" stroke-width="7" stroke-linecap="round"><path d="M50 12 V88 M12 50 H88"/><path d="M26 26 L74 74 M74 26 L26 74"/></g></svg></span>
+          Воспоминания на весь год
+        </div>
+      </div>
 
       <div class="dateblock">
         <div class="date-big">2–9 января</div>
         <div class="date-meta">
           <div class="d1">8 дней</div>
-          <div class="d2">7–15 лет</div>
+          <div class="d2">каникулы у воды</div>
         </div>
-      </div>
-
-      <div class="facts">
-        <span class="chip">Плавание</span>
-        <span class="chip">English</span>
-        <span class="chip">Квесты</span>
-        <span class="chip alt">2 взрослых в смене</span>
-      </div>
-
-      <div class="cta-row">
-        <div class="cta">Оставить заявку</div>
-        <div class="site">buhta.camp</div>
       </div>
     </div>
   </div>
