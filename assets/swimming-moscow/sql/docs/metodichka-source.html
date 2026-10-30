@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Swimming Moscow — Методичка по базе данных и доступам</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 18mm 16mm 20mm 16mm;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: "DejaVu Sans", "Noto Sans", Arial, sans-serif;
+      color: #0b1f33;
+      font-size: 10.5pt;
+      line-height: 1.45;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 20pt;
+      margin: 0 0 6pt;
+      color: #084a8f;
+    }
+
+    h2 {
+      font-size: 13pt;
+      margin: 18pt 0 8pt;
+      padding-bottom: 4pt;
+      border-bottom: 2px solid #0b6bcb;
+      color: #084a8f;
+      page-break-after: avoid;
+    }
+
+    h3 {
+      font-size: 11pt;
+      margin: 12pt 0 6pt;
+      color: #0b1f33;
+      page-break-after: avoid;
+    }
+
+    p { margin: 0 0 8pt; }
+
+    .cover {
+      border: 2px solid #0b6bcb;
+      padding: 22pt 20pt;
+      margin-bottom: 16pt;
+      background: linear-gradient(135deg, #eef6fc, #ffffff);
+    }
+
+    .meta {
+      color: #4a657a;
+      font-size: 9.5pt;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #0b6bcb;
+      color: #fff;
+      font-size: 8.5pt;
+      padding: 2pt 8pt;
+      border-radius: 3pt;
+      margin-bottom: 8pt;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 6pt 0 12pt;
+      font-size: 9.5pt;
+      page-break-inside: avoid;
+    }
+
+    th, td {
+      border: 1px solid #c5d6e6;
+      padding: 6pt 7pt;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #e3f0fa;
+      color: #084a8f;
+      font-weight: bold;
+    }
+
+    tr:nth-child(even) td { background: #f7fbfe; }
+
+    code, .mono {
+      font-family: "DejaVu Sans Mono", "Courier New", monospace;
+      font-size: 8.5pt;
+      background: #eef4fa;
+      padding: 1pt 4pt;
+      border-radius: 2pt;
+    }
+
+    pre {
+      background: #0b1f33;
+      color: #e8f3fb;
+      padding: 10pt 12pt;
+      border-radius: 4pt;
+      font-family: "DejaVu Sans Mono", monospace;
+      font-size: 8pt;
+      line-height: 1.4;
+      white-space: pre-wrap;
+      word-break: break-word;
+      page-break-inside: avoid;
+    }
+
+    ul, ol { margin: 0 0 10pt 16pt; padding: 0; }
+    li { margin-bottom: 3pt; }
+
+    .note {
+      border-left: 3px solid #d62828;
+      background: #fff5f5;
+      padding: 8pt 10pt;
+      margin: 8pt 0 12pt;
+      font-size: 9.5pt;
+      page-break-inside: avoid;
+    }
+
+    .tip {
+      border-left: 3px solid #0f7a4c;
+      background: #f1faf5;
+      padding: 8pt 10pt;
+      margin: 8pt 0 12pt;
+      font-size: 9.5pt;
+      page-break-inside: avoid;
+    }
+
+    .toc li { margin-bottom: 4pt; }
+
+    .footer-note {
+      margin-top: 20pt;
+      font-size: 8.5pt;
+      color: #4a657a;
+      border-top: 1px solid #c5d6e6;
+      padding-top: 8pt;
+    }
+
+    .two-col {
+      display: table;
+      width: 100%;
+      margin-bottom: 8pt;
+    }
+    .two-col > div {
+      display: table-cell;
+      width: 50%;
+      vertical-align: top;
+      padding-right: 10pt;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cover">
+    <div class="badge">Методичка</div>
+    <h1>Swimming Moscow</h1>
+    <p style="font-size:12pt;margin:0 0 10pt;color:#0b6bcb;font-weight:bold;">
+      База данных сайта школы · доступы · FAQ · расписание · прайс
+    </p>
+    <p class="meta">
+      Сайт: https://swimmingmoscow.ru/<br>
+      Файл схемы: <span class="mono">assets/swimming-moscow/sql/swimming_moscow_schema.sql</span><br>
+      СУБД: MySQL 8+ / MariaDB 10.5+ · кодировка UTF-8 (utf8mb4)<br>
+      Дата: сентябрь 2026
+    </p>
+  </div>
+
+  <h2>1. Содержание</h2>
+  <ol class="toc">
+    <li>Назначение методички</li>
+    <li>Как импортировать базу</li>
+    <li>Как зайти (логины и пароли)</li>
+    <li>Роли и права</li>
+    <li>Структура таблиц</li>
+    <li>FAQ: админка и сайт</li>
+    <li>Прайс (актуальный)</li>
+    <li>Полезные VIEW и SQL-запросы</li>
+    <li>Регламент администратора (кратко)</li>
+  </ol>
+
+  <h2>2. Назначение</h2>
+  <p>
+    Этот документ — рабочая методичка по единому SQL-скрипту школы плавания
+    <strong>Swimming Moscow</strong>. Скрипт создаёт таблицы, связи, индексы,
+    начальные данные и представления. Отдельный сайт входа не требуется:
+    доступ проверяется через MySQL-клиент (или будущую админ-панель, которая
+    читает эти же таблицы).
+  </p>
+  <div class="note">
+    <strong>Важно:</strong> пароли в сидах демо-уровня.
+    Перед продом смените пароли и перейдите на bcrypt/argon2.
+  </div>
+
+  <h2>3. Как импортировать базу</h2>
+  <ol>
+    <li>Установите MySQL или MariaDB.</li>
+    <li>Создайте базу и выполните скрипт:</li>
+  </ol>
+  <pre>mysql -u root -p -e "CREATE DATABASE swimming_moscow
+  CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
+
+mysql -u root -p swimming_moscow &lt; swimming_moscow_schema.sql</pre>
+  <p>
+    Порядок внутри скрипта: <strong>DROP → CREATE → ALTER → INSERT → VIEW</strong>.
+    Скрипт можно запускать повторно (таблицы пересоздаются).
+  </p>
+  <div class="tip">
+    Для просмотра удобны TablePlus, DBeaver, phpMyAdmin или консоль <span class="mono">mysql</span>.
+  </div>
+
+  <h2>4. Как зайти (логины и пароли)</h2>
+
+  <h3>4.1. Администратор (супер-админ)</h3>
+  <table>
+    <thead>
+      <tr><th>Поле</th><th>Значение</th><th>Где хранится</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Логин</td><td><code>admin</code></td><td><code>admin_users.login</code></td></tr>
+      <tr><td>Пароль</td><td><code>admin123</code></td><td>хеш SHA2-256 в <code>password_hash</code></td></tr>
+      <tr><td>Email</td><td><code>admin@swimmingmoscow.ru</code></td><td><code>admin_users.email</code></td></tr>
+      <tr><td>Роль</td><td>супер-админ (<code>is_super_admin = 1</code>)</td><td>роль <code>admin</code></td></tr>
+    </tbody>
+  </table>
+
+  <pre>SELECT id, login, full_name, is_super_admin
+FROM admin_users
+WHERE login = 'admin'
+  AND password_hash = SHA2('admin123', 256)
+  AND is_active = 1;</pre>
+
+  <h3>4.2. Тестовый пользователь сайта (родитель)</h3>
+  <table>
+    <thead>
+      <tr><th>Поле</th><th>Значение</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Email</td><td><code>parent@example.com</code></td></tr>
+      <tr><td>Пароль</td><td><code>parent123</code></td></tr>
+      <tr><td>Роль</td><td><code>user</code></td></tr>
+      <tr><td>Профиль</td><td>Анна Иванова · ребёнок Миша · филиал Качаловский</td></tr>
+    </tbody>
+  </table>
+
+  <h2>5. Роли и права</h2>
+  <table>
+    <thead>
+      <tr><th>Роль</th><th>Код</th><th>Для кого</th><th>Доступ</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Администратор</td><td><code>admin</code></td>
+        <td>владелец / супер-админ</td><td>все модули</td>
+      </tr>
+      <tr>
+        <td>Менеджер</td><td><code>manager</code></td>
+        <td>администраторы смены</td>
+        <td>FAQ, новости, расписание, заявки, прайс</td>
+      </tr>
+      <tr>
+        <td>Тренер</td><td><code>teacher</code></td>
+        <td>тренерский состав</td>
+        <td>просмотр расписания, FAQ, заявок</td>
+      </tr>
+      <tr>
+        <td>Пользователь</td><td><code>user</code></td>
+        <td>родитель / клиент</td>
+        <td>данные сайта, без админки</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    Связь прав: таблицы <code>permissions</code> и <code>role_permissions</code>.
+    У каждой сущности есть поле <code>is_active</code>.
+  </p>
+
+  <h2>6. Структура таблиц (кратко)</h2>
+  <table>
+    <thead>
+      <tr><th>Блок</th><th>Таблицы</th><th>Назначение</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Админка</td>
+        <td><code>roles</code>, <code>permissions</code>, <code>role_permissions</code>, <code>admin_users</code>, <code>admin_logs</code></td>
+        <td>доступ, роли, журнал действий</td>
+      </tr>
+      <tr>
+        <td>FAQ</td>
+        <td><code>faq_categories</code>, <code>faq_items</code></td>
+        <td>управление вопросами; на сайте только опубликованные</td>
+      </tr>
+      <tr>
+        <td>Пользователи</td>
+        <td><code>users</code>, <code>user_profiles</code></td>
+        <td>клиенты / родители</td>
+      </tr>
+      <tr>
+        <td>Контент</td>
+        <td><code>news</code>, <code>announcements</code></td>
+        <td>новости и объявления</td>
+      </tr>
+      <tr>
+        <td>Школа</td>
+        <td><code>branches</code>, <code>teachers</code>, <code>lessons</code>, <code>schedule</code>, <code>prices</code></td>
+        <td>филиалы, тренеры, занятия, слоты, прайс</td>
+      </tr>
+      <tr>
+        <td>Связь</td>
+        <td><code>contacts</code>, <code>feedback</code></td>
+        <td>контакты и заявки с сайта</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Филиалы в сидах</h3>
+  <table>
+    <thead>
+      <tr><th>Код</th><th>Название</th><th>Адрес</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>zaryad</code></td><td>Заряд</td><td>ул. Краснодонская, 1к1</td></tr>
+      <tr><td><code>voskhod</code></td><td>Восход</td><td>Ореховый пр-д, 26</td></tr>
+      <tr><td><code>maximum</code></td><td>Максимум</td><td>Волгоградский пр-т, 46/15с4</td></tr>
+      <tr><td><code>kachalovsky</code></td><td>Качаловский</td><td>ул. Каховка, 25</td></tr>
+      <tr><td><code>pegas</code></td><td>Пегас</td><td>ул. Верхние Поля, 27с1</td></tr>
+    </tbody>
+  </table>
+
+  <h2>7. FAQ: админка и сайт</h2>
+  <table>
+    <thead>
+      <tr><th>Где</th><th>Условие</th><th>Что видно</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Админка</td>
+        <td><code>faq_items.is_active = 1</code></td>
+        <td>все вопросы, включая черновики</td>
+      </tr>
+      <tr>
+        <td>Сайт</td>
+        <td><code>is_active = 1</code> и <code>is_published = 1</code></td>
+        <td>только опубликованные</td>
+      </tr>
+      <tr>
+        <td>VIEW</td>
+        <td><code>v_faq_with_categories</code></td>
+        <td>готовая выборка с категориями</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    Категории в сидах: <strong>Обучение</strong>, <strong>Техподдержка</strong>,
+    <strong>Расписание</strong>, <strong>Документы</strong> — по 8 опубликованных
+    вопросов + 1 внутренний черновик.
+  </p>
+  <p><strong>Как опубликовать вопрос:</strong></p>
+  <pre>UPDATE faq_items
+SET is_published = 1,
+    published_at = NOW(),
+    updated_by = 1
+WHERE id = 33;</pre>
+
+  <h2>8. Прайс (актуальный, детская группа)</h2>
+  <table>
+    <thead>
+      <tr><th>Позиция</th><th>Код</th><th>Цена</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Пробная тренировка</td><td><code>trial</code></td><td>1 000 ₽</td></tr>
+      <tr><td>Абонемент 4 занятия (1 р/нед)</td><td><code>abon_4</code></td><td>6 400 ₽</td></tr>
+      <tr><td>Абонемент 8 занятий (2 р/нед)</td><td><code>abon_8</code></td><td>11 100 ₽</td></tr>
+      <tr><td>Абонемент 12 занятий (3 р/нед)</td><td><code>abon_12</code></td><td>15 200 ₽</td></tr>
+      <tr><td>Разовое занятие</td><td><code>single</code></td><td>1 900 ₽</td></tr>
+      <tr><td>Пакет 12 занятий</td><td><code>pack_12</code></td><td>17 850 ₽</td></tr>
+      <tr><td>Пакет 24 занятия</td><td><code>pack_24</code></td><td>30 400 ₽</td></tr>
+      <tr><td>Пакет 36 занятий</td><td><code>pack_36</code></td><td>41 600 ₽</td></tr>
+      <tr><td>Персональная тренировка</td><td><code>personal</code></td><td>5 000 ₽</td></tr>
+      <tr><td>Сплит (для двоих)</td><td><code>split</code></td><td>7 000 ₽</td></tr>
+    </tbody>
+  </table>
+  <p>Актуальный прайс на сайте: VIEW <code>v_active_prices</code>.</p>
+
+  <h2>9. Полезные VIEW и запросы</h2>
+  <table>
+    <thead>
+      <tr><th>VIEW</th><th>Для чего</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>v_faq_with_categories</code></td><td>FAQ для сайта</td></tr>
+      <tr><td><code>v_active_users</code></td><td>активные пользователи с профилем</td></tr>
+      <tr><td><code>v_published_news</code></td><td>опубликованные новости</td></tr>
+      <tr><td><code>v_week_schedule</code></td><td>расписание с филиалом и тренером</td></tr>
+      <tr><td><code>v_active_prices</code></td><td>действующий прайс</td></tr>
+      <tr><td><code>v_teacher_lessons</code></td><td>занятия тренеров</td></tr>
+    </tbody>
+  </table>
+
+  <pre>-- FAQ для сайта
+SELECT * FROM v_faq_with_categories
+ORDER BY category_sort, is_pinned DESC, faq_sort;
+
+-- Расписание конкретной недели
+SELECT * FROM v_week_schedule
+WHERE week_start = '2026-08-31'
+   OR specific_date BETWEEN '2026-08-31' AND '2026-09-06'
+ORDER BY specific_date, start_time;
+
+-- Новые заявки
+SELECT * FROM feedback
+WHERE status = 'new' AND is_active = 1
+ORDER BY created_at DESC;</pre>
+
+  <h2>10. Регламент администратора (кратко)</h2>
+  <table>
+    <thead>
+      <tr><th>Время</th><th>Действие</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>10:00</td><td>Отчёт о готовности к работе (утро/дата)</td></tr>
+      <tr><td>до 12:00</td><td>Проверка расписания, связь с пробниками вчерашнего дня</td></tr>
+      <tr><td>с 11:00</td><td>Подтверждение визитов, оформление пробников, напоминания</td></tr>
+      <tr><td>12:00–15:00</td><td>Работа с недошедшими, лист ожидания</td></tr>
+      <tr><td>до 18:00</td><td>Напоминания новичкам на следующий день</td></tr>
+      <tr><td>22:00–23:00</td><td>Вечерний отчёт: заявки, записи, пробные, сделки, выручка</td></tr>
+    </tbody>
+  </table>
+  <p>
+    <strong>SLA ответа:</strong> новым клиентам — до 10 минут, повторным — до 20 минут.
+  </p>
+  <p>
+    <strong>Оформление нового клиента:</strong> договор → правила абонемента →
+    ссылка на оплату → таблица заполняемости → таблица оплат.
+  </p>
+  <div class="note">
+    На занятие нужны: очки, шапочка, купальник/плавки, шлёпанцы, полотенце,
+    анализ на энтеробиоз; для родителя — сменная обувь.
+  </div>
+
+  <div class="footer-note">
+    Swimming Moscow · Методичка по SQL-схеме и доступам · Файл рядом со схемой:
+    <span class="mono">assets/swimming-moscow/sql/docs/</span><br>
+    Источник данных: единый скрипт <span class="mono">swimming_moscow_schema.sql</span>.
+    Демо-пароли не использовать на боевом сервере.
+  </div>
+
+</body>
+</html>
