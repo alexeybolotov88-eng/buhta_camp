@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1280, initial-scale=1" />
+  <title>Swimming Moscow — набор на сентябрь</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; box-sizing: border-box; }
+    html, body {
+      width: 1280px;
+      height: 720px;
+      overflow: hidden;
+      font-family: Montserrat, system-ui, sans-serif;
+      background: #f7f9fc;
+      color: #1a3660;
+    }
+    .canvas {
+      width: 1280px;
+      height: 720px;
+      position: relative;
+      padding: 56px 72px 64px;
+      display: flex;
+      flex-direction: column;
+    }
+    .logo {
+      width: 248px;
+      height: auto;
+    }
+    .logo svg { width: 100%; height: auto; display: block; }
+    .content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 920px;
+      padding-top: 12px;
+    }
+    .eyebrow {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #5ba4e8;
+      margin-bottom: 18px;
+    }
+    h1 {
+      font-size: 78px;
+      line-height: 0.98;
+      font-weight: 800;
+      letter-spacing: -0.045em;
+      margin-bottom: 22px;
+    }
+    h1 em {
+      font-style: normal;
+      color: #e33d2d;
+    }
+    .lead {
+      font-size: 28px;
+      line-height: 1.35;
+      font-weight: 600;
+      color: #35557f;
+      max-width: 760px;
+      margin-bottom: 36px;
+    }
+    .meta {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .pill {
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #1a3660;
+      background: #fff;
+      border: 1.5px solid rgba(26, 54, 96, 0.12);
+      border-radius: 999px;
+      padding: 12px 20px;
+    }
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 56px;
+      padding: 0 28px;
+      border-radius: 999px;
+      background: #e33d2d;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+    }
+    .wave {
+      position: absolute;
+      right: -40px;
+      bottom: -20px;
+      width: 520px;
+      height: 180px;
+      opacity: 0.14;
+      color: #5ba4e8;
+    }
+    .dot {
+      position: absolute;
+      top: 120px;
+      right: 120px;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, rgba(91,164,232,.18), rgba(227,61,45,.08) 70%, transparent 72%);
+    }
+  </style>
+</head>
+<body>
+  <div class="canvas">
+    <div class="dot" aria-hidden="true"></div>
+    <div class="logo" aria-hidden="true">
+      <svg viewBox="0 0 280 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="36" cy="36" r="32" fill="#E33D2D"/>
+        <ellipse cx="36" cy="36" rx="22" ry="10" transform="rotate(-28 36 36)" fill="#5BA4E8"/>
+        <path fill="#fff" d="M22 38c6-8 14-10 20-6 2 1 3 3 3 5 0 4-4 7-9 7-3 0-6-2-8-4 1-1 2-1 3-2z"/>
+        <text x="84" y="34" font-family="Montserrat, Arial, sans-serif" font-weight="700" font-size="22" letter-spacing="-0.02em" fill="#1A3660">Swimming</text>
+        <text x="84" y="56" font-family="Montserrat, Arial, sans-serif" font-weight="700" font-size="22" letter-spacing="-0.02em" fill="#1A3660">Moscow</text>
+      </svg>
+    </div>
+    <div class="content">
+      <p class="eyebrow">Новый сезон</p>
+      <h1>Набор в группы<br />на <em>сентябрь</em></h1>
+      <p class="lead">Школа плавания для детей от 4 лет. Небольшие группы, 5 бассейнов в Москве.</p>
+      <div class="meta">
+        <span class="pill">Старт занятий — сентябрь</span>
+        <span class="cta">Записаться на первое занятие</span>
+      </div>
+    </div>
+    <svg class="wave" viewBox="0 0 520 180" fill="none" aria-hidden="true">
+      <path fill="currentColor" d="M0 92c40-18 80-18 120 0s80 18 120 0 80-18 120 0 80 18 120 0 80-18 120 0v88H0V92z"/>
+    </svg>
+  </div>
+</body>
+</html>

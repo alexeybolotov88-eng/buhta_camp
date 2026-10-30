@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1080, initial-scale=1" />
+  <title>Swimming Moscow — Instagram квадрат</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Nunito:wght@800;900&family=Pacifico&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; box-sizing: border-box; }
+    html, body { width: 1080px; height: 1080px; overflow: hidden; font-family: Nunito, Montserrat, sans-serif; }
+    .c {
+      width: 1080px; height: 1080px;
+      display: grid;
+      grid-template-rows: 1fr auto;
+      background: #1a3660;
+      overflow: hidden;
+    }
+    .hero {
+      position: relative;
+      min-height: 0;
+      overflow: hidden;
+    }
+    .hero-img {
+      position: absolute; inset: 0;
+      background: url("../photos/sm-ref-style-3d-boy.png") 58% 22% / cover no-repeat;
+    }
+    .hero-shade {
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(180deg, rgba(26,54,96,.2) 0%, transparent 24%, rgba(26,54,96,.35) 70%, #1a3660 100%),
+        linear-gradient(90deg, rgba(26,54,96,.62) 0%, rgba(26,54,96,.2) 48%, transparent 70%);
+    }
+    .top {
+      position: absolute; inset: 24px 24px auto 24px; z-index: 2;
+      display: grid;
+      grid-template-columns: 148px 1fr;
+      gap: 18px;
+      align-items: center;
+    }
+    .logo {
+      width: 148px; height: 148px;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 10px 22px rgba(0,0,0,.28);
+      background: transparent;
+    }
+    .logo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .headline { color: #fff; }
+    .headline .brand {
+      font-size: 16px; font-weight: 800; letter-spacing: 0.1em;
+      text-transform: uppercase; color: #9ec8f0; margin-bottom: 6px;
+    }
+    .headline h1 {
+      font-size: 44px; line-height: .96; font-weight: 900;
+      letter-spacing: -0.04em; text-transform: uppercase;
+      text-shadow: 0 4px 16px rgba(0,0,0,.28);
+    }
+    .headline h1 em {
+      font-style: normal; color: #ff6a4d; display: block;
+    }
+    .chip {
+      display: inline-flex; align-items: center; gap: 8px;
+      margin-top: 12px;
+      background: #fff; color: #1a3660;
+      font-size: 15px; font-weight: 800;
+      padding: 9px 14px; border-radius: 999px;
+    }
+    .bottom {
+      background: #1a3660;
+      color: #fff;
+      padding: 12px 22px 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 8px;
+    }
+    .pools {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 7px;
+    }
+    .pool {
+      display: grid;
+      grid-template-columns: 14px 1fr auto;
+      gap: 6px;
+      align-items: center;
+      background: rgba(255,255,255,.09);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 11px;
+      padding: 8px 10px;
+    }
+    .pool:last-child {
+      grid-column: 1 / -1;
+    }
+    .pool .pin { color: #5ba4e8; font-size: 12px; }
+    .pool strong {
+      display: block; font-size: 13px; font-weight: 900;
+      letter-spacing: -0.02em; text-transform: uppercase;
+    }
+    .pool span {
+      display: block; font-size: 11px; font-weight: 700;
+      color: rgba(255,255,255,.7); margin-top: 1px;
+    }
+    .age {
+      background: #e33d2d; color: #fff;
+      font-size: 10px; font-weight: 800;
+      padding: 4px 8px; border-radius: 999px; white-space: nowrap;
+    }
+    .foot {
+      margin-top: 4px;
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    }
+    .slogan {
+      font-family: Pacifico, cursive;
+      font-size: 18px; line-height: 1.15;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .heart {
+      width: 32px; height: 32px; border-radius: 50%; background: #e33d2d;
+      display: grid; place-items: center; flex: none;
+    }
+    .tg {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #fff; color: #1a3660;
+      padding: 11px 14px; border-radius: 999px;
+      font-size: 15px; font-weight: 800; flex: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="c">
+    <div class="hero">
+      <div class="hero-img"></div>
+      <div class="hero-shade"></div>
+      <div class="top">
+        <div class="logo">
+          <img src="../photos/swimming-moscow-logo.png" alt="Swimming Moscow" width="148" height="148" />
+        </div>
+        <div class="headline">
+          <div class="brand">Swimming Moscow</div>
+          <h1>Набор групп<em>на новый сезон</em></h1>
+          <div class="chip">Тренируйся рядом с домом</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom">
+      <div class="pools">
+        <div class="pool">
+          <div class="pin">📍</div>
+          <div><strong>Бассейн «Заряд»</strong><span>ул. Коштоянца, 20</span></div>
+          <div class="age">от 7 лет</div>
+        </div>
+        <div class="pool">
+          <div class="pin">📍</div>
+          <div><strong>Бассейн «Восход»</strong><span>ул. Щорса, 6</span></div>
+          <div class="age">от 7 лет</div>
+        </div>
+        <div class="pool">
+          <div class="pin">📍</div>
+          <div><strong>Бассейн «Максимум»</strong><span>ул. Остафьевская, 21</span></div>
+          <div class="age">от 4х лет</div>
+        </div>
+        <div class="pool">
+          <div class="pin">📍</div>
+          <div><strong>Бассейн «Качаловский»</strong><span>б. Дм. Донского, 14</span></div>
+          <div class="age">от 4х лет</div>
+        </div>
+        <div class="pool">
+          <div class="pin">📍</div>
+          <div><strong>Бассейн «Пегас»</strong><span>ул. Изваринская, 2/1</span></div>
+          <div class="age">от 4х лет</div>
+        </div>
+      </div>
+      <div class="foot">
+        <div class="slogan">
+          <div class="heart"><svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M12 21s-7-4.5-9.5-8.5C.5 9 2.5 5 6.5 5c2 0 3.5 1.2 5.5 3.2C14 6.2 15.5 5 17.5 5c4 0 6 4 4 7.5C19 16.5 12 21 12 21z"/></svg></div>
+          Влюбляем в плавание с первого занятия!
+        </div>
+        <div class="tg">✈ @swimming_moscow</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
