@@ -5,3 +5,13 @@
 .tmp-*/
 http*.log
 http*.pid
+
+# Local tooling deps (Playwright etc.)
+node_modules/
+package-lock.json
+.playwright-browsers/
+tmp-verify/
+.DS_Store
+**/.DS_Store
+*.swp
+*.swo

@@ -4,13 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Смены — Бухта Camp</title>
-  <meta name="description" content="Смены Бухта Camp: Снежный фарватер, English Current, Карта берега, Глубокая вода, Сцена у воды. Даты, программа, цены." />
+  <meta name="description" content="Смены Бухта Camp: Время чудес, Весенний импульс, Лето в Бухте. Даты, программа, цены." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=9" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,500&family=Onest:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=95" />
 </head>
 <body>
+  <a class="skip-link" href="#main">К содержанию</a>
   <header class="site-header" id="header">
     <div class="header-inner">
       <a class="logo" href="index.html" aria-label="Бухта Camp — на главную">
@@ -33,11 +34,11 @@
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <section class="page-hero">
       <div class="container">
         <p class="eyebrow">Смены 2026</p>
-        <h1>Пять заездов. У каждого свой характер.</h1>
+        <h1>Три заезда. У каждого свой характер.</h1>
         <p class="lead">Выберите сезон и сюжет. Все смены держат три опоры: плавание, English, командная история. Мест мало: бронируем по предоплате.</p>
       </div>
     </section>
@@ -45,32 +46,31 @@
     <section class="section section-flush">
       <div class="container">
         <div class="tabs" role="tablist" aria-label="Смены">
-          <button type="button" class="tab is-active" role="tab" aria-selected="true" data-tab="snezhny">Снежный фарватер</button>
-          <button type="button" class="tab" role="tab" aria-selected="false" data-tab="english">English Current</button>
-          <button type="button" class="tab" role="tab" aria-selected="false" data-tab="karta" id="karta">Карта берега</button>
-          <button type="button" class="tab" role="tab" aria-selected="false" data-tab="glubokaya">Глубокая вода</button>
-          <button type="button" class="tab" role="tab" aria-selected="false" data-tab="scena">Сцена у воды</button>
+          <button type="button" class="tab is-active" role="tab" aria-selected="true" data-tab="snezhny">Время чудес</button>
+          <button type="button" class="tab" role="tab" aria-selected="false" data-tab="english">Весенний импульс</button>
+          <button type="button" class="tab" role="tab" aria-selected="false" data-tab="leto" id="leto">Лето в Бухте</button>
         </div>
 
         <div class="tab-panel is-active" id="panel-snezhny" role="tabpanel" data-panel="snezhny">
           <div class="shift-detail">
             <div class="shift-detail-media">
-              <img src="images/pool.jpg" alt="Зимний бассейн" />
+              <img src="images/winter.jpg" alt="Дети идут к парк-отелю Тропикана по снегу" width="1800" height="1350" />
             </div>
             <div class="shift-detail-body">
               <span class="shift-tag">2–9 января · 8 дней</span>
-              <h2>Снежный фарватер</h2>
-              <p class="text-muted">Новогодняя смена для тех, кому мало только ёлки. Утром — бассейн и техника плавания, днём — English-игры и квест «фарватер», вечером — огоньки без гаджетов.</p>
+              <h2>Время чудес</h2>
+              <p class="text-muted">Новогодняя смена с плавательным интенсивом, творчеством и атмосферой настоящих зимних каникул. Парк-отель Тропикана, Подмосковье.</p>
               <ul class="program-list">
-                <li>Ежедневные тренировки в тёплом бассейне</li>
-                <li>Новогодний сюжет и командный квест</li>
-                <li>Мастерские: открытки, свет, сцена</li>
-                <li>Возраст 7–15, группы по уровню плавания</li>
+                <li>Плавательный интенсив — от нуля до результата</li>
+                <li>Новогодняя анимация и праздничные активности</li>
+                <li>Творческие мастер-классы</li>
+                <li>Катание на коньках</li>
+                <li>Зимние развлечения — ватрушки, игры и прогулки</li>
+                <li>Настольные игры и вечерние активности</li>
               </ul>
               <div class="price-row">
-                <span class="price">54 000 ₽</span>
                 <span class="seats-pill">Осталось 4 места</span>
-                <button type="button" class="btn btn-primary" data-open-modal data-shift="Снежный фарватер">Оставить заявку</button>
+                <button type="button" class="btn btn-primary" data-open-modal data-shift="Время чудес">Оставить заявку</button>
               </div>
             </div>
           </div>
@@ -79,100 +79,76 @@
         <div class="tab-panel" id="panel-english" role="tabpanel" data-panel="english">
           <div class="shift-detail">
             <div class="shift-detail-media">
-              <img src="images/child.jpg" alt="Весенняя смена" />
+              <img src="images/spring-impulse.jpg" alt="Дети на роликах и велосипеде весной в лагере" width="900" height="700" loading="lazy" />
             </div>
             <div class="shift-detail-body">
-              <span class="shift-tag">20–28 марта · 9 дней</span>
-              <h2>English Current</h2>
-              <p class="text-muted">Весенний заезд с упором на разговорный English. Язык встроен в плавание, квесты и быт: ребёнок слышит и говорит весь день, без зубрёжки списков слов.</p>
+              <span class="shift-tag">28 марта – 4 апреля · 8 дней</span>
+              <h2>Весенний импульс</h2>
+              <p class="text-muted">Весенняя смена, где плавательный интенсив сочетается с изучением английского и активным отдыхом.</p>
               <ul class="program-list">
-                <li>English-погружение 3–4 часа в день в игре</li>
-                <li>Плавание и подвижные станции</li>
-                <li>Финальный English-квест для родителей на выезде</li>
-                <li>Идеально после каникул перед четвертью</li>
+                <li>Плавательный интенсив — от нуля до результата</li>
+                <li>Английский язык — занятия с педагогом</li>
+                <li>Настольные игры и командные активности</li>
+                <li>Творческие занятия и мастер-классы</li>
+                <li>Весенние прогулки и активный отдых</li>
+                <li>Вечерняя программа — игры, общение и тематические активности</li>
               </ul>
               <div class="price-row">
-                <span class="price">62 000 ₽</span>
                 <span class="seats-pill ok">Осталось 9 мест</span>
-                <button type="button" class="btn btn-primary" data-open-modal data-shift="English Current">Оставить заявку</button>
+                <button type="button" class="btn btn-primary" data-open-modal data-shift="Весенний импульс">Оставить заявку</button>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="tab-panel" id="panel-karta" role="tabpanel" data-panel="karta">
+        <div class="tab-panel" id="panel-leto" role="tabpanel" data-panel="leto">
           <div class="shift-detail">
             <div class="shift-detail-media">
-              <img src="images/shore.jpg" alt="Летний берег" />
+              <img src="images/summer-buhta.jpg" alt="Дети на пикнике у озера на летней смене в Бухта Camp" width="900" height="700" loading="lazy" />
             </div>
             <div class="shift-detail-body">
-              <span class="shift-tag">10–24 июня · 14 дней</span>
-              <h2>Карта берега</h2>
-              <p class="text-muted">Главная летняя смена: две недели у воды. Дети собирают «карту берега» — квесты, станции, выезды на конюшню и в музей. Для тех, кто хочет и устать, и подружиться.</p>
+              <h2>Лето в Бухте</h2>
+              <p class="text-muted">Главный летний заезд у воды: плавание, квесты, English, выезды на конюшню и в музей. Один сюжет — два заезда на выбор.</p>
+              <div class="shift-dates shift-dates-lg" aria-label="Даты летних заездов">
+                <div class="shift-date-row">
+                  <strong>1-я смена</strong>
+                  <span>10–20 июня · 11 дней</span>
+                </div>
+                <div class="shift-date-row">
+                  <strong>2-я смена</strong>
+                  <span>15–25 августа · 11 дней</span>
+                </div>
+              </div>
               <ul class="program-list">
                 <li>Плавание и береговые станции каждый день</li>
-                <li>Длинный сюжетный квест на всю смену</li>
+                <li>Сюжетный квест на всю смену</li>
                 <li>Конюшня + музей в программе</li>
                 <li>English-блоки утром, творчество вечером</li>
               </ul>
               <div class="price-row">
-                <span class="price">89 000 ₽</span>
-                <span class="seats-pill">Осталось 6 мест</span>
-                <button type="button" class="btn btn-primary" data-open-modal data-shift="Карта берега">Оставить заявку</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="tab-panel" id="panel-glubokaya" role="tabpanel" data-panel="glubokaya">
-          <div class="shift-detail">
-            <div class="shift-detail-media">
-              <img src="images/hero.jpg" alt="Плавание" />
-            </div>
-            <div class="shift-detail-body">
-              <span class="shift-tag">20–28 июля · 9 дней</span>
-              <h2>Глубокая вода</h2>
-              <p class="text-muted">Спортивная смена для тех, кто уже не боится воды. Больше метров, техника, эстафеты. English и квесты остаются, но тон задаёт бассейн и открытая вода.</p>
-              <ul class="program-list">
-                <li>Усиленный блок плавания с тренером</li>
-                <li>Эстафеты и командный заплыв финала</li>
-                <li>English и короткие квесты для баланса</li>
-                <li>Рекомендуем от 9 лет или с опытом</li>
-              </ul>
-              <div class="price-row">
-                <span class="price">68 000 ₽</span>
-                <span class="seats-pill ok">Осталось 11 мест</span>
-                <button type="button" class="btn btn-primary" data-open-modal data-shift="Глубокая вода">Оставить заявку</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="tab-panel" id="panel-scena" role="tabpanel" data-panel="scena">
-          <div class="shift-detail">
-            <div class="shift-detail-media">
-              <img src="images/craft.jpg" alt="Творческая смена" />
-            </div>
-            <div class="shift-detail-body">
-              <span class="shift-tag">15–25 августа · 11 дней</span>
-              <h2>Сцена у воды</h2>
-              <p class="text-muted">Финал лета: смена, где сюжет выходит на сцену. Дети ставят показ для родителей, параллельно держат плавание и English. Для тех, кто любит быть на виду и в команде.</p>
-              <ul class="program-list">
-                <li>Постановка и показ в день выезда</li>
-                <li>Плавание и береговые игры</li>
-                <li>Конюшня или музей — один выезд</li>
-                <li>Мягкое закрытие сезона без спешки</li>
-              </ul>
-              <div class="price-row">
-                <span class="price">74 000 ₽</span>
-                <span class="seats-pill ok">Осталось 14 мест</span>
-                <button type="button" class="btn btn-primary" data-open-modal data-shift="Сцена у воды">Оставить заявку</button>
+                <span class="seats-pill ok">Места на оба заезда</span>
+                <button type="button" class="btn btn-primary" data-open-modal data-shift="Лето в Бухте">Оставить заявку</button>
               </div>
             </div>
           </div>
         </div>
 
         <p class="shift-footnote">В стоимость: проживание, питание 5 раз, программа, выезды по смене, медсопровождение. Трансфер из Москвы — по запросу.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta-band reveal">
+          <div class="cta-band-copy">
+            <h2>Не уверены, какая смена подойдёт?</h2>
+            <p>3 вопроса — и покажем заезд под возраст, интересы и удобные даты.</p>
+          </div>
+          <div class="cta-band-actions">
+            <button type="button" class="btn btn-primary btn-cta-lg" data-open-quiz>Подобрать смену</button>
+            <button type="button" class="btn btn-on-dark btn-cta-lg" data-open-modal>Оставить заявку</button>
+          </div>
+        </div>
       </div>
     </section>
   </main>
@@ -211,10 +187,10 @@
 
   <div class="modal" id="book-modal" aria-hidden="true">
     <div class="modal-backdrop" data-close-modal></div>
-    <div class="modal-dialog" role="dialog" aria-labelledby="modal-title">
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title">
       <button type="button" class="modal-close" data-close-modal aria-label="Закрыть">×</button>
       <h2 id="modal-title">Заявка на смену</h2>
-      <p class="modal-lead">Мы перезвоним и подберём заезд.</p>
+      <p class="modal-lead">Перезвоним в течение дня и подберём заезд под возраст. Это не бронь — сначала разберёмся, подойдёт ли смена.</p>
       <form data-book-form>
         <div class="form-grid">
           <div class="form-group">
@@ -223,26 +199,26 @@
           </div>
           <div class="form-group">
             <label for="m-phone">Телефон</label>
-            <input id="m-phone" name="phone" type="tel" required autocomplete="tel" />
+            <input id="m-phone" name="phone" type="tel" required autocomplete="tel" inputmode="tel" placeholder="+7 999 000-00-00" />
           </div>
+          <p class="field-hint field-hint-row">Нужен, чтобы перезвонить. Рассылок нет.</p>
           <div class="form-group">
             <label for="m-child">Имя ребёнка и возраст</label>
-            <input id="m-child" name="child" required />
+            <input id="m-child" name="child" required autocomplete="off" placeholder="Например: Аня, 10" />
           </div>
           <div class="form-group">
-            <label for="m-shift">Смена</label>
+            <label for="m-shift">Смена <span class="optional">(необязательно)</span></label>
             <select id="m-shift" name="shift">
               <option value="">Подскажите, пожалуйста</option>
-              <option>Снежный фарватер</option>
-              <option>English Current</option>
-              <option>Карта берега</option>
-              <option>Глубокая вода</option>
-              <option>Сцена у воды</option>
+              <option>Время чудес</option>
+              <option>Весенний импульс</option>
+              <option>Лето в Бухте · 10–20 июня</option>
+              <option>Лето в Бухте · 15–25 августа</option>
             </select>
           </div>
           <div class="form-group full">
-            <label for="m-note">Комментарий</label>
-            <textarea id="m-note" name="note"></textarea>
+            <label for="m-note">Комментарий <span class="optional">(необязательно)</span></label>
+            <textarea id="m-note" name="note" placeholder="Плавает или нет, аллергии, вопросы…"></textarea>
           </div>
         </div>
         <button type="submit" class="btn btn-primary btn-block">Отправить заявку</button>
@@ -250,7 +226,82 @@
       </form>
     </div>
   </div>
-  <div class="toast" id="toast" role="status"></div>
+<div class="modal quiz-modal" id="quiz-modal" aria-hidden="true">
+  <div class="modal-backdrop" data-close-quiz></div>
+  <div class="modal-dialog quiz-dialog" role="dialog" aria-modal="true" aria-labelledby="quiz-title">
+    <button type="button" class="modal-close" data-close-quiz aria-label="Закрыть">×</button>
+    <div class="quiz-progress" aria-hidden="true"><span data-quiz-progress style="width:33%"></span></div>
+    <p class="quiz-step-label" data-quiz-step-label>Вопрос 1 из 3</p>
+    <h2 id="quiz-title">Подберём смену за 30 секунд</h2>
+
+    <div class="quiz-step is-active" data-quiz-step="1">
+      <p class="quiz-question">Сколько лет ребёнку?</p>
+      <div class="quiz-options">
+        <button type="button" class="quiz-option quiz-option-card" data-quiz-answer="age" data-value="young">
+        <span class="quiz-option-media" aria-hidden="true"><img src="images/quiz/quiz-age-young.jpg" alt="" width="320" height="320" loading="lazy" /></span>
+        <span class="quiz-option-label">7–9 лет</span>
+      </button>
+        <button type="button" class="quiz-option quiz-option-card" data-quiz-answer="age" data-value="mid">
+        <span class="quiz-option-media" aria-hidden="true"><img src="images/quiz/quiz-age-mid.jpg" alt="" width="320" height="320" loading="lazy" /></span>
+        <span class="quiz-option-label">10–12 лет</span>
+      </button>
+        <button type="button" class="quiz-option quiz-option-card" data-quiz-answer="age" data-value="teen">
+        <span class="quiz-option-media" aria-hidden="true"><img src="images/quiz/quiz-age-teen.jpg" alt="" width="320" height="320" loading="lazy" /></span>
+        <span class="quiz-option-label">13–15 лет</span>
+      </button>
+      </div>
+    </div>
+
+    <div class="quiz-step" data-quiz-step="2" hidden>
+      <p class="quiz-question">Что важнее всего на этой смене?</p>
+      <div class="quiz-options">
+        <button type="button" class="quiz-option quiz-option-card" data-quiz-answer="focus" data-value="swim">
+        <span class="quiz-option-media" aria-hidden="true"><img src="images/quiz/quiz-focus-swim.jpg" alt="" width="320" height="320" loading="lazy" /></span>
+        <span class="quiz-option-label">Уверенность в воде</span>
+      </button>
+        <button type="button" class="quiz-option quiz-option-card" data-quiz-answer="focus" data-value="english">
+        <span class="quiz-option-media" aria-hidden="true"><img src="images/quiz/quiz-focus-english.jpg" alt="" width="320" height="320" loading="lazy" /></span>
+        <span class="quiz-option-label">Разговорный English</span>
+      </button>
+        <button type="button" class="quiz-option quiz-option-card" data-quiz-answer="focus" data-value="friends">
+        <span class="quiz-option-media" aria-hidden="true"><img src="images/quiz/quiz-focus-friends.jpg" alt="" width="320" height="320" loading="lazy" /></span>
+        <span class="quiz-option-label">Друзья и приключения</span>
+      </button>
+      </div>
+    </div>
+
+    <div class="quiz-step" data-quiz-step="3" hidden>
+      <p class="quiz-question">Когда удобнее ехать?</p>
+      <div class="quiz-options">
+        <button type="button" class="quiz-option quiz-option-card" data-quiz-answer="when" data-value="winter">
+        <span class="quiz-option-media" aria-hidden="true"><img src="images/quiz/quiz-when-winter.jpg" alt="" width="320" height="320" loading="lazy" /></span>
+        <span class="quiz-option-label">Зимние каникулы</span>
+      </button>
+        <button type="button" class="quiz-option quiz-option-card" data-quiz-answer="when" data-value="spring">
+        <span class="quiz-option-media" aria-hidden="true"><img src="images/quiz/quiz-when-spring.jpg" alt="" width="320" height="320" loading="lazy" /></span>
+        <span class="quiz-option-label">Весенние каникулы</span>
+      </button>
+        <button type="button" class="quiz-option quiz-option-card" data-quiz-answer="when" data-value="summer">
+        <span class="quiz-option-media" aria-hidden="true"><img src="images/quiz/quiz-when-summer.jpg" alt="" width="320" height="320" loading="lazy" /></span>
+        <span class="quiz-option-label">Лето</span>
+      </button>
+      </div>
+    </div>
+
+    <div class="quiz-step quiz-result" data-quiz-step="result" hidden>
+      <p class="quiz-eyebrow">Вам подойдёт</p>
+      <h3 class="quiz-result-title" data-quiz-result-title></h3>
+      <p class="quiz-result-meta" data-quiz-result-meta></p>
+      <p class="quiz-result-why" data-quiz-result-why></p>
+      <div class="quiz-result-actions">
+        <button type="button" class="btn btn-primary btn-block" data-quiz-book>Оставить заявку на эту смену</button>
+        <button type="button" class="btn btn-ghost btn-block" data-quiz-restart>Пройти ещё раз</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <script src="script.js"></script>
 </body>
 </html>

@@ -5,11 +5,16 @@ globs: ["**/*.html", "**/*.css", "**/*.js"]
 
 # Бухта design rules
 
-- Brand: **Бухта Camp**. Ages 7–15. Max 24 kids/shift. Trust UVP: swimming + English + quests + 1:6 counselors + daily parent updates + medic on shift.
+- Brand: **Бухта Camp**. Ages 7–15. Up to 20 kids/shift, 2 adults. Trust UVP: swimming + English + quests + daily parent updates + medic on shift.
+- Before writing copy, read `.agents/product-marketing.md`.
+- Skills to use: refero-design (research before UI), frontend-design, web-design-guidelines, copywriting, cro, product-marketing, seo-audit, schema, analytics, ab-testing, image, performance, seo.
+- Before shipping visual UI changes: verify with Playwright MCP screenshots (desktop + mobile). Never «камерный»; never count staff as «вожатые».
+- When fixing one issue, do not regress what already works (photo, crop, left copy, brand palette). Prefer surgical CSS over rewrites.
+- Contrast: coral CTA only on deep/teal/white — never coral on warm fire/photo glow. Light text needs dark scrim.
 - Palette: foam `#F3F7F5`, deep `#14352F`, teal `#1F6B5E`, coral `#D4572A`, lemon `#E8C547`. One coral accent only.
-- Type: Syne (display) + Manrope (body). Never Inter / Roboto / Fredoka / purple gradients / cream-terracotta craft look.
+- Type: Bricolage Grotesque (display) + DM Sans (body), Onest as Cyrillic fallback. Never Inter / Roboto / Fredoka / purple gradients / cream-terracotta craft look.
 - Pages: index, o-lagere, smeny, otzyvy, kontakty. Sales-first copy in Russian.
-- Shift names: Снежный фарватер, English Current, Карта берега, Глубокая вода, Сцена у воды.
+- Shift names: Время чудес, Весенний импульс, Карта берега, Глубокая вода, Сцена у воды.
 - Signature: logo 05 — БУХТА + wave + CAMP (`images/brand/logo-05.svg`). Never use «камерный».
 - No 3D motion effects.
 - Prefer asymmetric layouts; avoid three equal feature cards and generic SaaS heroes.

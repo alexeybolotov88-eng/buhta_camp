@@ -1,0 +1,20 @@
+Swimming Moscow — EXACT trainer t-shirt logo (from logo.svg + telegram-cloud-photo.jpg)
+
+PLACEMENT: Large centered emblem on white crew-neck t-shirt chest (no text on front)
+
+GRAPHIC ELEMENTS (layer order):
+1. Solid red circle background — hex #F40004
+2. Thick light sky-blue diagonal wavy band — hex #3495DF — crosses circle bottom-left to top-right, edges extend slightly past circle
+3. White swimmer silhouette in streamline/dive pose (arms extended forward together, legs straight) INSIDE the blue band
+4. Black swim cap on silhouette head
+5. Black swim trunks on silhouette
+6. Thin black outline lines on hands, feet, torso
+
+NOT on trainer shirt front: "SWIMMING MOSCOW" wordmark text (that is separate header logo only)
+
+TRAINER UNIFORM FULL:
+- White crew-neck athletic t-shirt with emblem above
+- Black athletic pants
+- Dark navy/black flip-flop slides (шлепанцы, pool clog sandals) — visible on deck
+- Optional back: light blue "ТРЕНЕР" text (pool photos)
+- Coach ALWAYS on pool deck, dry feet in slides, NEVER in water

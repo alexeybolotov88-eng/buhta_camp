@@ -16,11 +16,13 @@ colors:
   lemon: "#E8C547"
 typography:
   display:
-    fontFamily: Syne
+    fontFamily: Bricolage Grotesque
     fontWeight: 700
+    fallbackCyrillic: Onest
   body:
-    fontFamily: Manrope
+    fontFamily: DM Sans
     fontWeight: 500
+    fallbackCyrillic: Onest
 rounded:
   sm: 10px
   md: 16px
@@ -40,9 +42,10 @@ Kids camp for parents who want a real program and clear safety rules — not a b
 ## Brand
 
 - Name: **Бухта Camp**
-- Hero UVP: «Отпускаете спокойно. Узнаёте — каждый вечер.»
-- Proof line: небольшие группы у воды · плавание · English · квесты · 2 взрослых в смене · отели · фотоотчёт каждый вечер
+- Hero UVP: «Отпускайте спокойно. Мы всё продумали.»
+- Proof line: небольшие группы у воды · плавание · English · квесты · 2 взрослых в смене · до 20 детей · отели · ежедневная связь
 - UVP (cold audience): безопасность через предсказуемость связи + видимость ребёнка в маленькой смене.
+- Marketing context: `.agents/product-marketing.md`
 
 ## Colors
 
@@ -50,7 +53,7 @@ One accent: coral. Teal for brand/secondary. Cool mist backgrounds. No purple gr
 
 ## Typography
 
-Syne for display. Manrope for UI/body. Sentence case. Max one eyebrow every three sections.
+Bricolage Grotesque for display + DM Sans for body (Onest as Cyrillic fallback). Sentence case. Max one eyebrow every three sections.
 
 ## Layout
 

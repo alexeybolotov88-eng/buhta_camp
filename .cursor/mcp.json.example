@@ -5,6 +5,14 @@
       "headers": {
         "x-api-key": "YOUR_21ST_API_KEY"
       }
+    },
+    "playwright": {
+      "command": "npx",
+      "args": ["@playwright/mcp@latest"]
+    },
+    "refero": {
+      "url": "https://api.refero.design/mcp",
+      "_comment": "Optional: add headers.Authorization Bearer YOUR_REFERO_TOKEN, or use Cursor OAuth. Needs Refero Pro for live research."
     }
   }
 }

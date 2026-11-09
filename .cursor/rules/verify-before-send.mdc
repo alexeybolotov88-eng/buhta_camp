@@ -1,0 +1,16 @@
+---
+description: Always verify work before sending a result — no reminder needed
+alwaysApply: true
+---
+
+# Verify before sending
+
+Do not reply as done until the result is actually checked.
+
+- After every change, verify the real outcome: browser, measurements, file contents, or the command output — not just that the file was edited.
+- For UI: load the page, check the affected block, confirm nothing is cropped, overlapping, or visually broken. Use Playwright when the environment allows it.
+- For copy: re-read the exact text on the page. Confirm spelling, names, dates, and that old wording is gone.
+- For images: confirm the file is the original/intended one, `src` is updated, and display aspect matches the photo (no unexpected `object-fit: cover` crop unless asked).
+- For layout: check desktop and a narrow width if the change can reflow.
+- If verification fails, fix it and check again. Do not describe the intended result as if it already works.
+- Do not wait for the user to say «перепроверь». This is default for all work in this project.

@@ -7,10 +7,11 @@
   <meta name="description" content="Связаться с Бухта Camp: телефон, Telegram, заявка на смену. Подберём заезд под возраст ребёнка." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=9" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,500&family=Onest:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=95" />
 </head>
 <body>
+  <a class="skip-link" href="#main">К содержанию</a>
   <header class="site-header" id="header">
     <div class="header-inner">
       <a class="logo" href="index.html" aria-label="Бухта Camp — на главную">
@@ -33,7 +34,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <section class="page-hero">
       <div class="container">
         <p class="eyebrow">Контакты</p>
@@ -71,7 +72,7 @@
 
         <div class="form-card reveal">
           <h2 class="section-title">Заявка на смену</h2>
-          <p class="modal-lead">Чем точнее возраст и опыт плавания, тем быстрее подскажем заезд.</p>
+          <p class="modal-lead">Перезвоним в течение дня. Чем точнее возраст и опыт плавания, тем быстрее подскажем заезд.</p>
           <form data-book-form>
             <div class="form-grid">
               <div class="form-group">
@@ -80,26 +81,26 @@
               </div>
               <div class="form-group">
                 <label for="c-phone">Телефон</label>
-                <input id="c-phone" name="phone" type="tel" required autocomplete="tel" placeholder="+7" />
+                <input id="c-phone" name="phone" type="tel" required autocomplete="tel" inputmode="tel" placeholder="+7 999 000-00-00" />
               </div>
+              <p class="field-hint field-hint-row">Нужен, чтобы перезвонить. Рассылок нет.</p>
               <div class="form-group">
                 <label for="c-child">Имя ребёнка и возраст</label>
-                <input id="c-child" name="child" required placeholder="Например: Лёва, 9" />
+                <input id="c-child" name="child" required autocomplete="off" placeholder="Например: Лёва, 9" />
               </div>
               <div class="form-group">
-                <label for="c-shift">Смена</label>
+                <label for="c-shift">Смена <span class="optional">(необязательно)</span></label>
                 <select id="c-shift" name="shift">
                   <option value="">Подскажите, пожалуйста</option>
-                  <option>Снежный фарватер</option>
-                  <option>English Current</option>
-                  <option>Карта берега</option>
-                  <option>Глубокая вода</option>
-                  <option>Сцена у воды</option>
+                  <option>Время чудес</option>
+                  <option>Весенний импульс</option>
+                  <option>Лето в Бухте · 10–20 июня</option>
+                  <option>Лето в Бухте · 15–25 августа</option>
                 </select>
               </div>
               <div class="form-group full">
-                <label for="c-note">Комментарий</label>
-                <textarea id="c-note" name="note" placeholder="Плавает / не плавает, аллергии, вопросы по трансферу…"></textarea>
+                <label for="c-note">Комментарий <span class="optional">(необязательно)</span></label>
+                <textarea id="c-note" name="note" placeholder="Плавает или нет, аллергии, вопросы по трансферу…"></textarea>
               </div>
             </div>
             <button type="submit" class="btn btn-primary btn-mt">Отправить заявку</button>
@@ -144,10 +145,10 @@
 
   <div class="modal" id="book-modal" aria-hidden="true">
     <div class="modal-backdrop" data-close-modal></div>
-    <div class="modal-dialog" role="dialog" aria-labelledby="modal-title">
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title">
       <button type="button" class="modal-close" data-close-modal aria-label="Закрыть">×</button>
       <h2 id="modal-title">Заявка на смену</h2>
-      <p class="modal-lead">Мы перезвоним и подберём заезд.</p>
+      <p class="modal-lead">Перезвоним в течение дня и подберём заезд под возраст. Это не бронь — сначала разберёмся, подойдёт ли смена.</p>
       <form data-book-form>
         <div class="form-grid">
           <div class="form-group">
@@ -156,26 +157,26 @@
           </div>
           <div class="form-group">
             <label for="m-phone">Телефон</label>
-            <input id="m-phone" name="phone" type="tel" required autocomplete="tel" />
+            <input id="m-phone" name="phone" type="tel" required autocomplete="tel" inputmode="tel" placeholder="+7 999 000-00-00" />
           </div>
+          <p class="field-hint field-hint-row">Нужен, чтобы перезвонить. Рассылок нет.</p>
           <div class="form-group">
             <label for="m-child">Имя ребёнка и возраст</label>
-            <input id="m-child" name="child" required />
+            <input id="m-child" name="child" required autocomplete="off" placeholder="Например: Аня, 10" />
           </div>
           <div class="form-group">
-            <label for="m-shift">Смена</label>
+            <label for="m-shift">Смена <span class="optional">(необязательно)</span></label>
             <select id="m-shift" name="shift">
               <option value="">Подскажите, пожалуйста</option>
-              <option>Снежный фарватер</option>
-              <option>English Current</option>
-              <option>Карта берега</option>
-              <option>Глубокая вода</option>
-              <option>Сцена у воды</option>
+              <option>Время чудес</option>
+              <option>Весенний импульс</option>
+              <option>Лето в Бухте · 10–20 июня</option>
+              <option>Лето в Бухте · 15–25 августа</option>
             </select>
           </div>
           <div class="form-group full">
-            <label for="m-note">Комментарий</label>
-            <textarea id="m-note" name="note"></textarea>
+            <label for="m-note">Комментарий <span class="optional">(необязательно)</span></label>
+            <textarea id="m-note" name="note" placeholder="Плавает или нет, аллергии, вопросы…"></textarea>
           </div>
         </div>
         <button type="submit" class="btn btn-primary btn-block">Отправить заявку</button>
@@ -183,7 +184,82 @@
       </form>
     </div>
   </div>
-  <div class="toast" id="toast" role="status"></div>
+<div class="modal quiz-modal" id="quiz-modal" aria-hidden="true">
+  <div class="modal-backdrop" data-close-quiz></div>
+  <div class="modal-dialog quiz-dialog" role="dialog" aria-modal="true" aria-labelledby="quiz-title">
+    <button type="button" class="modal-close" data-close-quiz aria-label="Закрыть">×</button>
+    <div class="quiz-progress" aria-hidden="true"><span data-quiz-progress style="width:33%"></span></div>
+    <p class="quiz-step-label" data-quiz-step-label>Вопрос 1 из 3</p>
+    <h2 id="quiz-title">Подберём смену за 30 секунд</h2>
+
+    <div class="quiz-step is-active" data-quiz-step="1">
+      <p class="quiz-question">Сколько лет ребёнку?</p>
+      <div class="quiz-options">
+        <button type="button" class="quiz-option quiz-option-card" data-quiz-answer="age" data-value="young">
+        <span class="quiz-option-media" aria-hidden="true"><img src="images/quiz/quiz-age-young.jpg" alt="" width="320" height="320" loading="lazy" /></span>
+        <span class="quiz-option-label">7–9 лет</span>
+      </button>
+        <button type="button" class="quiz-option quiz-option-card" data-quiz-answer="age" data-value="mid">
+        <span class="quiz-option-media" aria-hidden="true"><img src="images/quiz/quiz-age-mid.jpg" alt="" width="320" height="320" loading="lazy" /></span>
+        <span class="quiz-option-label">10–12 лет</span>
+      </button>
+        <button type="button" class="quiz-option quiz-option-card" data-quiz-answer="age" data-value="teen">
+        <span class="quiz-option-media" aria-hidden="true"><img src="images/quiz/quiz-age-teen.jpg" alt="" width="320" height="320" loading="lazy" /></span>
+        <span class="quiz-option-label">13–15 лет</span>
+      </button>
+      </div>
+    </div>
+
+    <div class="quiz-step" data-quiz-step="2" hidden>
+      <p class="quiz-question">Что важнее всего на этой смене?</p>
+      <div class="quiz-options">
+        <button type="button" class="quiz-option quiz-option-card" data-quiz-answer="focus" data-value="swim">
+        <span class="quiz-option-media" aria-hidden="true"><img src="images/quiz/quiz-focus-swim.jpg" alt="" width="320" height="320" loading="lazy" /></span>
+        <span class="quiz-option-label">Уверенность в воде</span>
+      </button>
+        <button type="button" class="quiz-option quiz-option-card" data-quiz-answer="focus" data-value="english">
+        <span class="quiz-option-media" aria-hidden="true"><img src="images/quiz/quiz-focus-english.jpg" alt="" width="320" height="320" loading="lazy" /></span>
+        <span class="quiz-option-label">Разговорный English</span>
+      </button>
+        <button type="button" class="quiz-option quiz-option-card" data-quiz-answer="focus" data-value="friends">
+        <span class="quiz-option-media" aria-hidden="true"><img src="images/quiz/quiz-focus-friends.jpg" alt="" width="320" height="320" loading="lazy" /></span>
+        <span class="quiz-option-label">Друзья и приключения</span>
+      </button>
+      </div>
+    </div>
+
+    <div class="quiz-step" data-quiz-step="3" hidden>
+      <p class="quiz-question">Когда удобнее ехать?</p>
+      <div class="quiz-options">
+        <button type="button" class="quiz-option quiz-option-card" data-quiz-answer="when" data-value="winter">
+        <span class="quiz-option-media" aria-hidden="true"><img src="images/quiz/quiz-when-winter.jpg" alt="" width="320" height="320" loading="lazy" /></span>
+        <span class="quiz-option-label">Зимние каникулы</span>
+      </button>
+        <button type="button" class="quiz-option quiz-option-card" data-quiz-answer="when" data-value="spring">
+        <span class="quiz-option-media" aria-hidden="true"><img src="images/quiz/quiz-when-spring.jpg" alt="" width="320" height="320" loading="lazy" /></span>
+        <span class="quiz-option-label">Весенние каникулы</span>
+      </button>
+        <button type="button" class="quiz-option quiz-option-card" data-quiz-answer="when" data-value="summer">
+        <span class="quiz-option-media" aria-hidden="true"><img src="images/quiz/quiz-when-summer.jpg" alt="" width="320" height="320" loading="lazy" /></span>
+        <span class="quiz-option-label">Лето</span>
+      </button>
+      </div>
+    </div>
+
+    <div class="quiz-step quiz-result" data-quiz-step="result" hidden>
+      <p class="quiz-eyebrow">Вам подойдёт</p>
+      <h3 class="quiz-result-title" data-quiz-result-title></h3>
+      <p class="quiz-result-meta" data-quiz-result-meta></p>
+      <p class="quiz-result-why" data-quiz-result-why></p>
+      <div class="quiz-result-actions">
+        <button type="button" class="btn btn-primary btn-block" data-quiz-book>Оставить заявку на эту смену</button>
+        <button type="button" class="btn btn-ghost btn-block" data-quiz-restart>Пройти ещё раз</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <script src="script.js"></script>
 </body>
 </html>
