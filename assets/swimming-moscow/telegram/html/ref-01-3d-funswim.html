@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1080, initial-scale=1" />
+  <title>Swimming Moscow — новый сезон</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Nunito:wght@800;900&family=Pacifico&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; box-sizing: border-box; }
+    html, body { width: 1080px; height: 1080px; overflow: hidden; font-family: Nunito, Montserrat, sans-serif; }
+    .c {
+      width: 1080px; height: 1080px; position: relative;
+      background: #eaf4ff; overflow: hidden;
+    }
+    .bg {
+      position: absolute; inset: 0;
+      background: url("../photos/sm-ref-style-3d-boy.png") 78% 42% / cover no-repeat;
+    }
+    .shade {
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(90deg, rgba(234,244,255,.98) 0%, rgba(234,244,255,.92) 40%, rgba(234,244,255,.2) 62%, transparent 78%),
+        linear-gradient(180deg, rgba(234,244,255,.35) 0%, transparent 20%, transparent 55%, rgba(26,54,96,.55) 100%);
+    }
+    .logo-mark {
+      position: absolute; left: 44px; top: 36px; z-index: 4;
+      width: 120px; height: 120px;
+      filter: drop-shadow(0 10px 18px rgba(26,54,96,.22));
+    }
+    .logo-mark svg { width: 100%; height: 100%; display: block; }
+    .content {
+      position: absolute; left: 44px; top: 180px; z-index: 4; max-width: 520px;
+    }
+    h1 {
+      font-size: 48px; line-height: 1.02; font-weight: 900;
+      letter-spacing: -0.035em; color: #1a3660; text-transform: uppercase;
+    }
+    h1 em {
+      font-style: normal; color: #e33d2d; display: block; margin-top: 4px;
+    }
+    .banner {
+      margin-top: 18px; display: inline-flex; align-items: center; gap: 10px;
+      background: #1a3660; color: #fff;
+      font-size: 18px; font-weight: 800;
+      padding: 12px 18px; border-radius: 14px;
+    }
+    .banner i {
+      width: 30px; height: 30px; border-radius: 8px; background: #5ba4e8;
+      display: grid; place-items: center;
+    }
+    .bottom {
+      position: absolute; left: 0; right: 0; bottom: 0; z-index: 5;
+      background: #1a3660;
+      border-radius: 36px 36px 0 0;
+      padding: 22px 28px 24px;
+      color: #fff;
+    }
+    .pools {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 16px;
+      margin-bottom: 16px;
+    }
+    .pool {
+      display: flex; align-items: baseline; gap: 8px;
+      font-size: 15px; font-weight: 800;
+    }
+    .pool b { color: #fff; text-transform: uppercase; letter-spacing: -0.02em; }
+    .pool span { color: rgba(255,255,255,.72); font-size: 12px; font-weight: 700; }
+    .pool i {
+      color: #5ba4e8; font-style: normal; font-size: 12px;
+    }
+    .foot-row {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 16px; padding-top: 12px;
+      border-top: 1px solid rgba(255,255,255,.18);
+    }
+    .slogan {
+      font-family: Pacifico, cursive;
+      font-size: 22px; line-height: 1.2;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .heart {
+      width: 36px; height: 36px; border-radius: 50%; background: #e33d2d;
+      display: grid; place-items: center; flex: none;
+    }
+    .tg {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #fff; color: #1a3660;
+      padding: 12px 16px; border-radius: 999px;
+      font-size: 16px; font-weight: 800; flex: none;
+    }
+    .leaf { position: absolute; z-index: 2; font-size: 32px; opacity: .8; }
+    .l1 { left: 520px; top: 140px; transform: rotate(-16deg); }
+    .l2 { right: 220px; top: 520px; transform: rotate(18deg); font-size: 24px; }
+  </style>
+</head>
+<body>
+  <div class="c">
+    <div class="bg"></div>
+    <div class="shade"></div>
+    <div class="leaf l1" aria-hidden="true">🍁</div>
+    <div class="leaf l2" aria-hidden="true">🍂</div>
+
+    <div class="logo-mark" aria-label="Swimming Moscow">
+      <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="60" cy="60" r="58" fill="#E33D2D"/>
+        <ellipse cx="60" cy="60" rx="40" ry="18" transform="rotate(-28 60 60)" fill="#5BA4E8"/>
+        <path fill="#fff" d="M38 64c10-14 24-18 34-10 3 2 5 5 5 8 0 7-7 12-16 12-5 0-10-3-14-7 2-2 4-2 5-3z"/>
+        <path fill="#1A3660" opacity=".25" d="M40 64c7-9 17-12 25-8 2 1 3 2 3 4 0 3-3 6-8 6-3 0-6-2-7-2z"/>
+      </svg>
+    </div>
+
+    <div class="content">
+      <h1>Набор групп<em>на новый сезон</em></h1>
+      <div class="banner">
+        <i><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></i>
+        Тренируйся рядом с домом!
+      </div>
+    </div>
+
+    <div class="bottom">
+      <div class="pools">
+        <div class="pool"><i>📍</i><div><b>Бассейн «Заряд»</b> <span>ул. Коштоянца, 20</span></div></div>
+        <div class="pool"><i>📍</i><div><b>Бассейн «Восход»</b> <span>ул. Щорса, 6</span></div></div>
+        <div class="pool"><i>📍</i><div><b>Бассейн «Максимум»</b> <span>ул. Остафьевская, 21</span></div></div>
+        <div class="pool"><i>📍</i><div><b>Бассейн «Качаловский»</b> <span>б. Дм. Донского, 14</span></div></div>
+        <div class="pool"><i>📍</i><div><b>Бассейн «Пегас»</b> <span>ул. Изваринская, 2/1</span></div></div>
+      </div>
+      <div class="foot-row">
+        <div class="slogan">
+          <div class="heart"><svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M12 21s-7-4.5-9.5-8.5C.5 9 2.5 5 6.5 5c2 0 3.5 1.2 5.5 3.2C14 6.2 15.5 5 17.5 5c4 0 6 4 4 7.5C19 16.5 12 21 12 21z"/></svg></div>
+          Влюбляем в плавание с первого занятия!
+        </div>
+        <div class="tg">✈ @swimming_moscow</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

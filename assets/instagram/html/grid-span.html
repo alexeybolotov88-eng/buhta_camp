@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=3240, initial-scale=1" />
+  <title>Бухта Camp — шапка ленты Instagram</title>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; box-sizing: border-box; }
+    html, body { width: 3240px; height: 1080px; overflow: hidden; background: #14352f; }
+    .canvas {
+      width: 3240px;
+      height: 1080px;
+      position: relative;
+      display: grid;
+      grid-template-columns: 1080px 1080px 1080px;
+    }
+    .photo {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 2280px;
+      height: 1080px;
+      background: url("../photos/buhta-mist-bay.png") 46% 42% / cover no-repeat;
+    }
+    .photo-shade {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 2280px;
+      height: 1080px;
+      background:
+        linear-gradient(90deg, rgba(20, 53, 47, 0.78) 0%, rgba(20, 53, 47, 0.52) 48%, rgba(20, 53, 47, 0.28) 72%, rgba(243, 247, 245, 0.92) 96%),
+        linear-gradient(180deg, rgba(20, 53, 47, 0.18), rgba(20, 53, 47, 0.42));
+    }
+    .tile {
+      position: relative;
+      z-index: 2;
+      height: 1080px;
+      padding: 88px 92px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .tile-3 {
+      background: #f3f7f5;
+    }
+    .eyebrow {
+      font-family: Manrope, sans-serif;
+      font-weight: 700;
+      font-size: 22px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #e8c547;
+    }
+    .tile-3 .eyebrow { color: #1f6b5e; }
+    .name {
+      font-family: Syne, sans-serif;
+      font-weight: 800;
+      font-size: 168px;
+      letter-spacing: -0.045em;
+      line-height: 0.86;
+      color: #fff;
+      margin-top: 28px;
+    }
+    .wave {
+      width: 420px;
+      height: 36px;
+      color: #e8c547;
+      margin: 18px 0 14px;
+    }
+    .wave svg { width: 100%; height: 100%; display: block; }
+    .sub {
+      font-family: Manrope, sans-serif;
+      font-weight: 600;
+      font-size: 28px;
+      color: rgba(243, 247, 245, 0.88);
+    }
+    .promise {
+      font-family: Syne, sans-serif;
+      font-weight: 800;
+      font-size: 76px;
+      line-height: 1.02;
+      letter-spacing: -0.035em;
+      color: #fff;
+      max-width: 900px;
+      margin-top: auto;
+    }
+    .promise span {
+      display: block;
+      color: #e8c547;
+      font-size: 42px;
+      letter-spacing: 0;
+      font-family: Manrope, sans-serif;
+      font-weight: 700;
+      margin-top: 22px;
+    }
+    .facts {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 36px;
+    }
+    .fact {
+      display: grid;
+      grid-template-columns: 86px 1fr;
+      gap: 18px;
+      align-items: baseline;
+      padding: 22px 0;
+      border-top: 1px solid rgba(20, 53, 47, 0.12);
+    }
+    .fact strong {
+      font-family: Syne, sans-serif;
+      font-weight: 800;
+      font-size: 36px;
+      color: #14352f;
+      letter-spacing: -0.03em;
+    }
+    .fact span {
+      font-family: Manrope, sans-serif;
+      font-weight: 600;
+      font-size: 28px;
+      color: #5c6e66;
+    }
+    .cta {
+      margin-top: auto;
+      align-self: flex-start;
+      background: #d4572a;
+      color: #fff;
+      font-family: Manrope, sans-serif;
+      font-weight: 800;
+      font-size: 28px;
+      letter-spacing: -0.01em;
+      padding: 22px 36px;
+      border-radius: 999px;
+    }
+    .foot {
+      font-family: Manrope, sans-serif;
+      font-weight: 600;
+      font-size: 24px;
+      color: rgba(243, 247, 245, 0.8);
+    }
+    .tile-3 .foot { color: #5c6e66; }
+  </style>
+</head>
+<body>
+  <div class="canvas">
+    <div class="photo"></div>
+    <div class="photo-shade"></div>
+    <div class="tile">
+      <div>
+        <p class="eyebrow">Camp</p>
+        <h1 class="name">БУХТА</h1>
+        <div class="wave">
+          <svg viewBox="20 38 180 18" fill="none" aria-hidden="true">
+            <path fill="currentColor" d="M28.00,47.91 C31.63,47.91 35.25,44.40 38.88,44.40 C42.50,44.40 46.13,42.24 49.76,42.24 C53.38,42.24 57.01,40.99 60.63,40.99 C64.26,40.99 67.88,40.88 71.51,40.88 C75.14,40.88 78.76,41.32 82.39,41.32 C86.01,41.32 89.64,42.91 93.27,42.91 C96.89,42.91 100.52,44.43 104.14,44.43 C108.05,44.43 111.95,46.87 115.86,46.87 C119.48,46.87 123.11,48.99 126.73,48.99 C130.36,48.99 133.99,49.84 137.61,49.84 C141.24,49.84 144.86,50.01 148.49,50.01 C152.12,50.01 155.74,49.51 159.37,49.51 C162.99,49.51 166.62,47.72 170.24,47.72 C173.87,47.72 177.50,45.01 181.12,45.01 C184.75,45.01 188.37,41.83 192.00,41.83 L192.00,41.83 C188.37,41.83 184.75,45.34 181.12,45.34 C177.50,45.34 173.87,48.71 170.24,48.71 C166.62,48.71 162.99,51.19 159.37,51.19 C155.74,51.19 152.12,52.51 148.49,52.51 C144.86,52.51 141.24,53.29 137.61,53.29 C133.99,53.29 130.36,53.53 126.73,53.53 C123.11,53.53 119.48,52.61 115.86,52.61 C111.95,52.61 108.05,50.17 104.14,50.17 C100.52,50.17 96.89,47.44 93.27,47.44 C89.64,47.44 86.01,44.77 82.39,44.77 C78.76,44.77 75.14,43.38 71.51,43.38 C67.88,43.38 64.26,42.66 60.63,42.66 C57.01,42.66 53.38,43.23 49.76,43.23 C46.13,43.23 42.50,44.73 38.88,44.73 C35.25,44.73 31.63,47.91 28.00,47.91 Z"/>
+          </svg>
+        </div>
+        <p class="sub">Лагерь у воды · 7–15 лет</p>
+      </div>
+      <p class="foot">Подмосковье</p>
+    </div>
+    <div class="tile">
+      <p class="eyebrow">Обещание</p>
+      <p class="promise">Отпускаете спокойно.<br />Узнаёте — каждый вечер.<span>Небольшие смены · плавание · English · квесты</span></p>
+    </div>
+    <div class="tile tile-3">
+      <p class="eyebrow">Как устроено</p>
+      <div class="facts">
+        <div class="fact"><strong>2</strong><span>взрослых в смене</span></div>
+        <div class="fact"><strong>24</strong><span>детей максимум</span></div>
+        <div class="fact"><strong>связь</strong><span>фотоотчёт каждый вечер</span></div>
+      </div>
+      <div class="cta">Оставить заявку</div>
+    </div>
+  </div>
+</body>
+</html>

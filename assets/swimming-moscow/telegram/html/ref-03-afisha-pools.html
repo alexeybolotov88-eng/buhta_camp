@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1080, initial-scale=1" />
+  <title>Swimming Moscow — афиша набор сентябрь</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Pacifico&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; box-sizing: border-box; }
+    html, body { width: 1080px; height: 1080px; overflow: hidden; font-family: Montserrat, sans-serif; }
+    .c {
+      width: 1080px; height: 1080px; position: relative;
+      background: linear-gradient(180deg, #eaf4ff 0%, #f7fbff 55%, #dcebff 100%);
+      overflow: hidden;
+    }
+    .dots {
+      position: absolute; left: 0; top: 0; width: 280px; height: 220px;
+      background-image: radial-gradient(#c5d8f0 2px, transparent 2.5px);
+      background-size: 18px 18px; opacity: .7;
+    }
+    .logo {
+      position: absolute; left: 48px; top: 40px; z-index: 3; width: 210px;
+    }
+    .logo svg { width: 100%; display: block; }
+    .title {
+      position: absolute; left: 48px; top: 150px; z-index: 3;
+    }
+    .title h1 {
+      font-size: 72px; line-height: .92; font-weight: 900;
+      letter-spacing: -0.04em;
+    }
+    .title h1 .a { color: #1a3660; }
+    .title h1 .b { color: #e33d2d; display: block; }
+    .banner {
+      margin-top: 18px; display: inline-flex; align-items: center; gap: 12px;
+      background: #1a3660; color: #fff; padding: 14px 22px; border-radius: 16px;
+      font-size: 18px; font-weight: 800; letter-spacing: 0.02em;
+    }
+    .banner i {
+      width: 34px; height: 34px; border-radius: 10px; background: #5ba4e8;
+      display: grid; place-items: center;
+    }
+    .list {
+      position: absolute; left: 48px; top: 380px; z-index: 3;
+      width: 460px; background: rgba(255,255,255,.92);
+      border-radius: 24px; padding: 18px 18px 10px;
+      box-shadow: 0 16px 36px rgba(26,54,96,.1);
+    }
+    .pool {
+      display: grid; grid-template-columns: 28px 1fr auto; gap: 10px;
+      align-items: start; padding: 12px 8px;
+      border-bottom: 1px solid rgba(26,54,96,.08);
+    }
+    .pool:last-child { border-bottom: 0; }
+    .pin { color: #5ba4e8; padding-top: 2px; }
+    .pool strong { display: block; font-size: 18px; font-weight: 900; color: #1a3660; letter-spacing: -0.02em; }
+    .pool span { display: block; font-size: 13px; font-weight: 600; color: #5c7290; margin-top: 2px; }
+    .age {
+      background: #e33d2d; color: #fff; font-size: 12px; font-weight: 800;
+      padding: 6px 10px; border-radius: 999px; white-space: nowrap; margin-top: 2px;
+    }
+    .photos {
+      position: absolute; right: 36px; top: 120px; width: 480px; height: 720px; z-index: 2;
+    }
+    .photos img {
+      width: 100%; height: 100%; object-fit: cover; object-position: center;
+      border-radius: 28px;
+      mask-image: linear-gradient(90deg, transparent 0%, #000 12%, #000 100%);
+      -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 12%, #000 100%);
+    }
+    .photos::after {
+      content: ""; position: absolute; inset: 0;
+      background:
+        radial-gradient(circle at 70% 20%, rgba(255,255,255,.45), transparent 30%),
+        radial-gradient(circle at 80% 70%, rgba(91,164,232,.25), transparent 35%);
+      pointer-events: none;
+    }
+    .foot {
+      position: absolute; left: 0; right: 0; bottom: 0; z-index: 4;
+      height: 140px;
+      background: #1a3660;
+      border-radius: 48px 48px 0 0;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px;
+      color: #fff;
+    }
+    .slogan {
+      font-family: Pacifico, cursive;
+      font-size: 28px; line-height: 1.2;
+      display: flex; align-items: center; gap: 14px;
+    }
+    .heart {
+      width: 42px; height: 42px; border-radius: 50%; background: #e33d2d;
+      display: grid; place-items: center; flex: none;
+    }
+    .tg {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: #fff; color: #1a3660;
+      padding: 14px 20px; border-radius: 999px;
+      font-size: 18px; font-weight: 800;
+    }
+    .tg i {
+      width: 28px; height: 28px; border-radius: 50%; background: #5ba4e8; color: #fff;
+      display: grid; place-items: center; font-style: normal; font-weight: 900;
+    }
+  </style>
+</head>
+<body>
+  <div class="c">
+    <div class="dots" aria-hidden="true"></div>
+    <div class="logo">
+      <svg viewBox="0 0 280 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="36" cy="36" r="32" fill="#E33D2D"/>
+        <ellipse cx="36" cy="36" rx="22" ry="10" transform="rotate(-28 36 36)" fill="#5BA4E8"/>
+        <path fill="#fff" d="M22 38c6-8 14-10 20-6 2 1 3 3 3 5 0 4-4 7-9 7-3 0-6-2-8-4 1-1 2-1 3-2z"/>
+        <text x="84" y="34" font-family="Montserrat, Arial, sans-serif" font-weight="800" font-size="22" fill="#1A3660">Swimming</text>
+        <text x="84" y="56" font-family="Montserrat, Arial, sans-serif" font-weight="800" font-size="22" fill="#1A3660">Moscow</text>
+      </svg>
+    </div>
+    <div class="title">
+      <h1><span class="a">НАБОР</span><span class="b">НА СЕНТЯБРЬ</span></h1>
+      <div class="banner">
+        <i><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></i>
+        ТРЕНИРУЙСЯ РЯДОМ С ДОМОМ!
+      </div>
+    </div>
+    <div class="list">
+      <div class="pool">
+        <div class="pin">📍</div>
+        <div><strong>ЗАРЯД</strong><span>ул. Коштоянца, 20</span></div>
+        <div class="age">от 4 лет</div>
+      </div>
+      <div class="pool">
+        <div class="pin">📍</div>
+        <div><strong>ВОСХОД</strong><span>ул. Щорса, 6</span></div>
+        <div class="age">от 4 лет</div>
+      </div>
+      <div class="pool">
+        <div class="pin">📍</div>
+        <div><strong>МАКСИМУМ</strong><span>ул. Остафьевская, 21</span></div>
+        <div class="age">от 4 лет</div>
+      </div>
+      <div class="pool">
+        <div class="pin">📍</div>
+        <div><strong>КАЧАЛОВСКИЙ</strong><span>б. Дм. Донского, 14</span></div>
+        <div class="age">от 4 лет</div>
+      </div>
+      <div class="pool">
+        <div class="pin">📍</div>
+        <div><strong>ПЕГАС</strong><span>ул. Изваринская, 2/1</span></div>
+        <div class="age">от 4 лет</div>
+      </div>
+    </div>
+    <div class="photos">
+      <img src="../photos/sm-ref-style-kids-collage.png" alt="" />
+    </div>
+    <div class="foot">
+      <div class="slogan">
+        <div class="heart"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M12 21s-7-4.5-9.5-8.5C.5 9 2.5 5 6.5 5c2 0 3.5 1.2 5.5 3.2C14 6.2 15.5 5 17.5 5c4 0 6 4 4 7.5C19 16.5 12 21 12 21z"/></svg></div>
+        Влюбляем в плавание<br/>с первого занятия!
+      </div>
+      <div class="tg"><i>✈</i> @swimming_moscow</div>
+    </div>
+  </div>
+</body>
+</html>
